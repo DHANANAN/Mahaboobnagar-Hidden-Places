@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mahabubnagar Hidden Gems & Landmarks</title>
+  <style>
+    :root {
+      --bg: #fffaf2;
+      --surface: #ffffff;
+      --text: #2f2420;
+      --muted: #6b5f57;
+      --orange-1: #f59f2f;
+      --orange-2: #eb7f2c;
+      --green-1: #2fa86e;
+      --green-2: #188b58;
+      --soft: #ffe9cf;
+      --danger-soft: #fff1e8;
+      --shadow: 0 14px 30px rgba(103, 76, 49, 0.13);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(245,159,47,.22) 0, transparent 30%),
+        radial-gradient(circle at 88% 16%, rgba(47,168,110,.2) 0, transparent 35%),
+        linear-gradient(180deg, #fff8ef 0%, #fffdf8 48%, #ffffff 100%);
+      line-height: 1.5;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 252, 246, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #f3dcc1;
+      padding: .85rem .9rem;
+    }
+
+    .topbar-inner { max-width: 1120px; margin: 0 auto; }
+
+    h1 {
+      margin: 0 0 .7rem;
+      line-height: 1.2;
+      font-size: clamp(1.2rem, 1rem + 1.7vw, 1.9rem);
+      background: linear-gradient(90deg, var(--orange-2), var(--orange-1), var(--green-1));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .search-wrap {
+      display: flex;
+      gap: .7rem;
+      align-items: center;
+      width: 100%;
+      border: 1px solid transparent;
+      background:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(90deg, rgba(245,159,47,.55), rgba(47,168,110,.45)) border-box;
+      border-radius: 16px;
+      padding: .7rem .9rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      min-height: 52px;
+    }
+    .search-wrap::before {
+      content: "";
+      position: absolute;
+      left: 3rem;
+      right: .9rem;
+      bottom: .55rem;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(235,127,44,.35), rgba(24,139,88,.35));
+      pointer-events: none;
+    }
+    .search-wrap input {
+      border: 0;
+      width: 100%;
+      outline: 0;
+      font-size: 1rem;
+      color: var(--text);
+      background: transparent;
+      padding-bottom: .1rem;
+    }
+    .search-wrap:focus-within {
+      box-shadow: 0 0 0 2px rgba(47,168,110,.2), var(--shadow);
+    }
+
+    .chips {
+      display: flex;
+      gap: .5rem;
+      overflow: auto;
+      padding-top: .72rem;
+      scrollbar-width: thin;
+    }
+    .chip {
+      min-height: 40px;
+      border: 1px solid #f3d7b9;
+      background: #fff;
+      color: var(--text);
+      border-radius: 999px;
+      padding: .4rem .78rem;
+      cursor: pointer;
+      white-space: nowrap;
+      font-weight: 600;
+      font-size: .86rem;
+      transition: all .25s ease;
+    }
+    .chip[aria-pressed="true"] {
+      background: linear-gradient(90deg, rgba(245,159,47,.28), rgba(47,168,110,.22));
+      border-color: #d8c19e;
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      max-width: 1120px;
+      margin: .95rem auto 0;
+      padding: 0 .9rem;
+    }
+
+    .hero-card {
+      border-radius: var(--radius);
+      background:
+        linear-gradient(130deg, rgba(235,127,44,.95), rgba(245,159,47,.9) 45%, rgba(47,168,110,.9));
+      color: #fffdf8;
+      box-shadow: var(--shadow);
+      padding: 1.1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,.16) 1.4px, transparent 1.4px);
+      background-size: 14px 14px;
+      pointer-events: none;
+      opacity: .5;
+      animation: drift 14s linear infinite;
+    }
+    @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-20px);} }
+
+    .hero h2 { margin: 0 0 .35rem; font-size: clamp(1.05rem, .9rem + 1.3vw, 1.45rem); }
+    .hero p { margin: 0; max-width: 65ch; }
+
+    .essay-grid {
+      margin-top: .95rem;
+      display: grid;
+      gap: .8rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .essay {
+      background: #fff;
+      border: 1px solid #ffd9be;
+      border-radius: 14px;
+      padding: .82rem;
+      box-shadow: var(--shadow);
+    }
+    .essay h3 { margin: 0 0 .3rem; font-size: .95rem; color: #7a2452; }
+    .essay p { margin: 0; color: #513b54; font-size: .9rem; }
+
+    main { max-width: 1120px; margin: 1rem auto; padding: 0 .9rem 1.4rem; }
+    .results-note { color: var(--muted); margin: 0 0 .85rem; }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+    }
+
+    .card {
+      border-radius: var(--radius);
+      border: 1px solid #ffdecb;
+      box-shadow: var(--shadow);
+      background: #fff;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease;
+      text-align: left;
+    }
+    .card:hover,
+    .card:focus-visible { transform: translateY(-2px); box-shadow: 0 18px 30px rgba(83,43,16,.18); outline: none; }
+
+    .cover, .placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+    .placeholder {
+      display: grid;
+      place-items: center;
+      color: #7f5f54;
+      font-weight: 600;
+      background: linear-gradient(120deg, #ffe7dd, #fff2da);
+      text-align: center;
+      padding: .5rem;
+    }
+
+    .content { padding: .92rem; }
+    .title { margin: 0; font-size: 1.03rem; }
+
+    .badges, .meta-badges {
+      display: flex;
+      gap: .35rem;
+      flex-wrap: wrap;
+      margin: .52rem 0;
+    }
+    .badge {
+      border-radius: 999px;
+      border: 1px solid #ffcda8;
+      background: #fff5dd;
+      color: #723500;
+      font-size: .75rem;
+      font-weight: 700;
+      padding: .22rem .58rem;
+    }
+    .badge.warn { background: #fff8dd; color: #7c5200; }
+    .badge.verify { background: var(--danger-soft); color: #8d4d00; }
+
+    .summary {
+      margin: 0;
+      color: #493144;
+      font-size: .93rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    dialog {
+      width: min(940px, 95vw);
+      border: 0;
+      border-radius: 20px;
+      padding: 0;
+      box-shadow: 0 25px 60px rgba(23, 10, 37, .45);
+    }
+    dialog::backdrop { background: rgba(19, 8, 35, .7); }
+
+    .modal-head {
+      position: sticky;
+      top: 0;
+      background: #fffefc;
+      border-bottom: 1px solid #ffe0c8;
+      padding: .9rem 1rem .55rem;
+      display: flex;
+      justify-content: space-between;
+      gap: .7rem;
+      align-items: start;
+    }
+
+    .close-btn {
+      border: 0;
+      border-radius: 999px;
+      width: 44px;
+      height: 44px;
+      background: #ffefd8;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .modal-body {
+      padding: .55rem 1rem 1rem;
+      max-height: 75vh;
+      overflow: auto;
+    }
+
+    .detail-group { margin: .9rem 0; }
+    .detail-group h3 { margin: 0 0 .35rem; font-size: 1rem; color: #712253; }
+    .detail-group p { margin: 0; color: #4a3751; }
+    ul { margin: .3rem 0 0; padding-left: 1.1rem; }
+    li { margin-bottom: .25rem; }
+
+    .links-grid {
+      display: grid;
+      gap: .6rem;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+    .link-card {
+      border: 1px solid #ffdabb;
+      border-radius: 12px;
+      background: #fffaf3;
+      padding: .58rem;
+      text-decoration: none;
+      color: #493246;
+      min-height: 74px;
+      display: grid;
+      gap: .22rem;
+      align-content: start;
+    }
+
+    .map-link {
+      display: inline-flex;
+      margin-top: .4rem;
+      text-decoration: none;
+      font-weight: 700;
+      color: #7b1f57;
+      background: #ffe7ee;
+      border: 1px solid #ffc0d2;
+      border-radius: 999px;
+      padding: .38rem .7rem;
+    }
+
+    .source-link { color: #5c2ad6; word-break: break-word; }
+
+    footer {
+      text-align: center;
+      padding: 1.1rem .9rem 1.5rem;
+      color: #5a4660;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 420px) {
+      .content { padding: .8rem; }
+      .title { font-size: .98rem; }
+      .summary { font-size: .89rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <h1>Mahabubnagar Hidden Gems &amp; Landmarks</h1>
+      <label class="search-wrap" for="searchInput" aria-label="Search places">
+        <span aria-hidden="true">🔎</span>
+        <input id="searchInput" type="search" placeholder="Search by place, type, or tag" />
+      </label>
+      <div class="chips" id="chips" role="toolbar" aria-label="Filter by place type"></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-card">
+      <h2>Telangana warmth, Mahabubnagar soul, and a biryani-masala color story</h2>
+      <p>From ancient stones and hill forts to sacred cave shrines and lakeside sunsets, this guide blends cultural memory, local sayings, and practical travel details so each stop feels like visiting a trusted local home.</p>
+    </div>
+    <div class="essay-grid" aria-label="Why visit essays">
+      <article class="essay">
+        <h3>Why these places matter</h3>
+        <p>These destinations represent Telangana’s layered identity: spiritual devotion, Deccan-era history, ecological resilience, and everyday community life.</p>
+      </article>
+      <article class="essay">
+        <h3>Local-home feeling</h3>
+        <p>The tone follows <em>mana ooru, mana samskruti</em> — “our town, our culture” — helping visitors connect with place, people, and respectful travel habits.</p>
+      </article>
+      <article class="essay">
+        <h3>Culture + flavor trail</h3>
+        <p>Think of this journey like biryani masala: heritage, devotion, nature, and stories layered together for a rich and memorable experience.</p>
+      </article>
+    </div>
+  </section>
+
+  <main>
+    <p class="results-note" id="resultsNote"></p>
+    <section class="grid" id="cards" aria-live="polite"></section>
+  </main>
+
+  <dialog id="placeModal" aria-label="Place details">
+    <div class="modal-head">
+      <div>
+        <h2 id="modalTitle" style="margin:0 0 .32rem;"></h2>
+        <div class="meta-badges" id="modalBadges"></div>
+      </div>
+      <button class="close-btn" id="closeModal" aria-label="Close details">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </dialog>
+
+  <footer>
+    Always verify local timings, access rules, and safety conditions before travel.
+  </footer>
+
+  <script>
+    const data = {
+      "district": "Mahabubnagar",
+      "state": "Telangana",
+      "updated_iso": "2026-02-20",
+      "source_policy": {
+        "primary": ["Mahabubnagar District Administration tourism pages", "Telangana Tourism destination pages"],
+        "images": ["Wikimedia Commons (preferred)"],
+        "verification_note": "Some sites may have only community references; those must be labeled and verified."
+      },
+      "places": [
+        {"id":"pillalamarri-banyan","name":"Pillalamarri Banyan Tree","type":["Nature","Heritage"],"summary":"A famed banyan tree site near Mahabubnagar town; official page describes it as ~700 years old with a large spread and on-site visitor facilities.","why_go":["Iconic landmark","Shaded picnic-like atmosphere","Quick half-day visit"],"admin_area":{"district":"Mahabubnagar","mandal":"Mahabubnagar (as per district site context)"},"visit_tips":{"best_time":"Dec–Feb is highlighted as best season for the region (general destination guidance).","duration":"1–2 hours (typical quick visit)","notes":["Expect crowds on holidays; be mindful of animal facilities if present."]},"sources":[{"label":"Mahabubnagar District - Pillala Marri Tree","url":"https://mahabubnagar.telangana.gov.in/pillala-marri/"}],"images":[{"title":"Pillalamarri Mahabubnagar","commons_page":"https://commons.wikimedia.org/wiki/File:Pillalamarri_Mahabubnagar.jpg","license":"See Wikimedia file page","attribution":"From Wikimedia Commons (check file page for author/license)"}],"tags":["family","weekend","nature","photography"]},
+        {"id":"koilkonda-fort","name":"Koilkonda Fort","type":["History","Fort","Viewpoint"],"summary":"Hilltop fort described by the district page as an erstwhile Qutb Shahi outpost; mentions multiple gates and an inscription dated 1550.","why_go":["Trek + ruins","Great views","History nerd heaven"],"admin_area":{"district":"Mahabubnagar","mandal":"Koilkonda"},"visit_tips":{"duration":"2–4 hours","notes":["Carry water; uneven terrain; sun protection."]},"sources":[{"label":"Mahabubnagar District - Koilkonda Fort","url":"https://mahabubnagar.telangana.gov.in/koilkonda-fort/"}],"images":[{"title":"Koilkonda Fort (Mahbubnagar)","commons_page":"https://commons.wikimedia.org/wiki/File:Koilkonda_Fort(Mahbubnagar).jpg","license":"See Wikimedia file page","attribution":"From Wikimedia Commons (check file page for author/license)"}],"tags":["trek","ruins","sunset","photography"]},
+        {"id":"manyam-konda","name":"Manyam Konda (Sri Venkateshwara Temple)","type":["Spiritual","Cave Temple","Hill"],"summary":"Cave-located hill shrine; district page describes it as a major spiritual center near Mahabubnagar and notes an annual festival on Magha Purnima.","why_go":["Pilgrimage","Views + caves","Quiet hill vibe"],"admin_area":{"district":"Mahabubnagar","mandal":"Mahabubnagar (per district page)"},"visit_tips":{"duration":"Half-day","notes":["Respect temple customs; watch steps/rocks."]},"sources":[{"label":"Mahabubnagar District - Manyam Konda","url":"https://mahabubnagar.telangana.gov.in/manyam-konda/"},{"label":"Telangana Tourism - Mahabubnagar destination","url":"https://tourism.telangana.gov.in/destinations/mahabubnagar"}],"images":[],"image_needed":true,"suggested_query_terms":["Manyam Konda Mahabubnagar Wikimedia Commons","Sri Venkateshwara Temple Manyam Konda photo"]},
+        {"id":"mayuri-haritha-vanam","name":"Mayuri Haritha Vanam (Eco Park)","type":["Eco Park","Recreation","Nature"],"summary":"Eco-tourism / urban green space initiative described by the district page; positioned near the Mahbubnagar–Jadcherla highway with hilly forested terrain.","why_go":["Bright, modern hangout","Green space","Easy local getaway"],"admin_area":{"district":"Mahabubnagar"},"visit_tips":{"duration":"2–3 hours","notes":["Great for evening stroll content and quick reels."]},"sources":[{"label":"Mahabubnagar District - Mayuri Haritha Vanam","url":"https://mahabubnagar.telangana.gov.in/mayuri-haritha-vanam/"},{"label":"Mahabubnagar District - Tourist Places","url":"https://mahabubnagar.telangana.gov.in/tourist-places/"}],"images":[],"image_needed":true,"suggested_query_terms":["Mayuri Haritha Vanam Mahabubnagar Wikimedia Commons","Mayuri Eco Park Mahabubnagar photo"]},
+        {"id":"pedda-cheruvu","name":"Pedda Cheruvu (Big Lake)","type":["Lake","City Nature"],"summary":"Large natural lake in Mahabubnagar town described by the district page, including bund-road access around the lake.","why_go":["Sunset walks","Local everyday-life vibe","Simple scenic shots"],"admin_area":{"district":"Mahabubnagar"},"visit_tips":{"duration":"1–2 hours"},"sources":[{"label":"Mahabubnagar District - Pedda Cheruvu","url":"https://mahabubnagar.telangana.gov.in/pedda-cheruvu/"}],"images":[],"image_needed":true,"suggested_query_terms":["Pedda Cheruvu Mahabubnagar Wikimedia Commons","Peddacheruvu Mahabubnagar lake photo"]},
+        {"id":"krishna-bhima-sangam","name":"Sri Sangam of Krishna and Bhima Rivers","type":["River Confluence","Spiritual","Heritage"],"summary":"Confluence site described by the district page with religious importance and historical references.","why_go":["Confluence landscape","Pilgrimage significance","Heritage storytelling"],"admin_area":{"district":"Mahabubnagar","mandal":"Maganoor (as per district page)"},"visit_tips":{"duration":"2–4 hours"},"sources":[{"label":"Mahabubnagar District - Sri Sangam","url":"https://mahabubnagar.telangana.gov.in/sri-sangam-of-krishna-and-bheemarivers/"}],"images":[],"image_needed":true},
+        {"id":"mudmal-megaliths","name":"Megalithic Burials / Menhirs (Mudmal area)","type":["Archaeology","Prehistory","Landscape"],"summary":"District page describes a large megalithic burial landscape and menhir features in the Mudmal/Maganoor area.","why_go":["Rare prehistoric site","Science-y storytelling","Offbeat exploration"],"admin_area":{"district":"Mahabubnagar","mandal":"Maganoor"},"visit_tips":{"duration":"Half-day","notes":["Go with daylight; be respectful—this is a burial landscape."]},"sources":[{"label":"Mahabubnagar District - Megalit Burials","url":"https://mahabubnagar.telangana.gov.in/megalit-burials/"}],"images":[],"image_needed":true},
+        {"id":"gurdwara-manji-sahib-thimmareddipalle","name":"Gurdwara Majji/Manji Sahib (Thimma Reddi Palle, Maddur Mandal)","type":["Spiritual","Sikh Heritage"],"summary":"Included per user request. Currently found as a community reference online; not located on official tourism pages or Wikimedia in this pass.","admin_area":{"district":"Mahabubnagar","mandal":"Maddur"},"verification_status":"community_reference_only","sources":[{"label":"Community reference mentioning the gurdwara at Thimma Reddi Palle (Maddur Mandal)","url":"https://www.sikhphilosophy.net/threads/forgotten-sikh-tribes-and-sikh-religious-places.54071/"}],"images":[],"image_needed":true,"suggested_query_terms":["Gurdwara Manji Sahib Thimma Reddi Palle Wikimedia","Thimmareddipalle gurdwara photo"]}
+      ]
+    };
+
+    const photoLibrary = [
+      { placeId: 'pillalamarri-banyan', title: 'Pillalamarri Banyan Tree (photo reference)', url: 'https://www.trodly.com/activity-3259-koilkonda-fort-trek-from-hyderabad', source: 'Trodly' },
+      { placeId: 'mudmal-megaliths', title: 'Mudumal Menhirs – standing stones', url: 'https://indianexpress.com/article/cities/hyderabad/heritage-enthusiasts-telangana-seek-unesco-tag-for-menhirs-at-mudumal-7574869/', source: 'Indian Express' },
+      { placeId: 'manyam-konda', title: 'Uma Maheswaram / hill-temple landscape reference', url: 'https://holaciti.com/travel-stories/uma-maheswaram-temple-history-timings-location-festivals-travel-guide', source: 'Holaciti' },
+      { placeId: 'krishna-bhima-sangam', title: 'Nearby regional landscape reference', url: 'https://www.trawell.in/telangana/mahabubnagar/jurala-dam', source: 'Trawell' }
+    ];
+
+    const stories = {
+      'pillalamarri-banyan': 'Locals often call this a living elder of the town — a shade-giving landmark where generations share stories and family memories.',
+      'koilkonda-fort': 'Koilkonda whispers Deccan-era strategy and courage. People say every gateway is a chapter of stone, wind, and watchful history.',
+      'manyam-konda': 'A hill of devotion where quiet steps and cave prayer spaces create a deeply reflective pilgrimage mood for devotees and travelers alike.',
+      'mayuri-haritha-vanam': 'An urban-green chapter of modern Telangana: recreation, hillside breeze, and a people-first eco space for evening relaxation.',
+      'pedda-cheruvu': 'Pedda Cheruvu holds the rhythm of daily Mahabubnagar life — walkers, sunsets, and calm water that mirrors the town’s pace.',
+      'krishna-bhima-sangam': 'At the sangam, two rivers meet like two traditions. It is both sacred geography and heritage memory for nearby communities.',
+      'mudmal-megaliths': 'Mudmal’s stones stand like prehistoric signatures. Elders and heritage enthusiasts describe it as a rare open-air archive of deep time.',
+      'gurdwara-manji-sahib-thimmareddipalle': 'Shared through community memory, this site reflects plural spiritual routes in the region and invites respectful, verified exploration.'
+    };
+
+    function mapLink(place) {
+      const query = `${place.name}, ${place.admin_area?.mandal || ''}, Mahabubnagar, Telangana`;
+      return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+    }
+
+    function normalizeHttpUrl(value) {
+      if (typeof value !== 'string' || !value.trim()) return '';
+      try {
+        const normalized = value.startsWith('//') ? `https:${value}` : value;
+        const parsed = new URL(normalized);
+        if (!/^https?:$/.test(parsed.protocol)) return '';
+        return parsed.toString();
+      } catch {
+        return '';
+      }
+    }
+
+    function extractCommonsFileName(commonsPageUrl) {
+      const safeUrl = normalizeHttpUrl(commonsPageUrl);
+      if (!safeUrl) return '';
+      try {
+        const parsed = new URL(safeUrl);
+        const host = parsed.hostname.replace(/^www\./, '').toLowerCase();
+        if (host !== 'commons.wikimedia.org') return '';
+
+        let filename = '';
+        const pathMatch = parsed.pathname.match(/^\/wiki\/File:(.+)$/i);
+        if (pathMatch) filename = pathMatch[1];
+
+        if (!filename) {
+          const title = parsed.searchParams.get('title') || '';
+          const titleMatch = title.match(/^File:(.+)$/i);
+          if (titleMatch) filename = titleMatch[1];
+        }
+
+        if (!filename) {
+          const specialMatch = parsed.pathname.match(/^\/wiki\/Special:FilePath\/(.+)$/i);
+          if (specialMatch) filename = specialMatch[1];
+        }
+
+        if (!filename) return '';
+        const decoded = decodeURIComponent(filename).trim();
+        return decoded || '';
+      } catch {
+        return '';
+      }
+    }
+
+    function commonsPageToImage(commonsPageUrl) {
+      const filename = extractCommonsFileName(commonsPageUrl);
+      if (!filename) return '';
+      return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=1400`;
+    }
+
+    function toDirectImageUrl(value) {
+      const safe = normalizeHttpUrl(value);
+      if (!safe) return '';
+      return commonsPageToImage(safe) || safe;
+    }
+
+    function getImageUrl(place) {
+      if (!place || !Array.isArray(place.images)) return '';
+      for (const image of place.images) {
+        if (!image || typeof image !== 'object') continue;
+        const explicit = toDirectImageUrl(image.image_url) || toDirectImageUrl(image.url);
+        if (explicit) return explicit;
+        const commons = commonsPageToImage(image.commons_page);
+        if (commons) return commons;
+      }
+      return '';
+    }
+
+    function getPhotoReference(placeId) {
+      return photoLibrary.find(item => item.placeId === placeId) || null;
+    }
+
+    function buildNarrative(place) {
+      const localLine = stories[place.id] || 'A meaningful stop that blends Telangana hospitality, local memory, and regional pride.';
+      const typeLine = place.type?.length ? `Cultural lens: ${place.type.join(' • ')}.` : '';
+      return `${localLine} ${typeLine} Local saying vibe: “Mana ooru, mana samskruti.”`;
+    }
+
+    const cardsEl = document.getElementById('cards');
+    const chipsEl = document.getElementById('chips');
+    const searchInput = document.getElementById('searchInput');
+    const resultsNote = document.getElementById('resultsNote');
+    const modal = document.getElementById('placeModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBadges = document.getElementById('modalBadges');
+    const modalBody = document.getElementById('modalBody');
+
+    const allTypes = [...new Set(data.places.flatMap(place => place.type || []))].sort();
+    let activeType = 'All';
+
+    function createChips() {
+      const types = ['All', ...allTypes];
+      chipsEl.innerHTML = types.map(type => `<button class="chip" data-type="${type}" aria-pressed="${type === 'All'}">${type}</button>`).join('');
+    }
+
+    function renderCards() {
+      const query = searchInput.value.trim().toLowerCase();
+      const filtered = data.places.filter(place => {
+        const haystack = [place.name, ...(place.type || []), ...(place.tags || [])].join(' ').toLowerCase();
+        const typeMatch = activeType === 'All' || (place.type || []).includes(activeType);
+        return typeMatch && (!query || haystack.includes(query));
+      });
+
+      resultsNote.textContent = `${filtered.length} place${filtered.length === 1 ? '' : 's'} found`;
+
+      cardsEl.innerHTML = filtered.length ? filtered.map(place => {
+        const imageUrl = getImageUrl(place);
+        const fallbackPhoto = getPhotoReference(place.id);
+        return `
+          <article class="card" tabindex="0" data-id="${place.id}" role="button" aria-label="Open details for ${place.name}">
+            ${imageUrl
+              ? `<img class="cover" src="${imageUrl}" alt="${place.name} photograph" loading="lazy" onerror="this.closest('article').querySelector('.placeholder').hidden=false; this.hidden=true;" /><div class="placeholder" hidden>Image preview unavailable</div>`
+              : `<div class="placeholder">${fallbackPhoto ? `Photo link available (${fallbackPhoto.source})` : 'Image needed for this place'}</div>`}
+            <div class="content">
+              <h2 class="title">${place.name}</h2>
+              <div class="badges">${(place.type || []).map(type => `<span class="badge">${type}</span>`).join('')}</div>
+              <div class="meta-badges">
+                ${place.image_needed ? '<span class="badge warn">Image needed</span>' : ''}
+                ${place.verification_status === 'community_reference_only' ? '<span class="badge verify">Verify details</span>' : ''}
+              </div>
+              <p class="summary">${place.summary || 'No summary yet.'}</p>
+            </div>
+          </article>
+        `;
+      }).join('') : '<p>No places match your filters. Try a broader search.</p>';
+    }
+
+    function renderModal(place) {
+      modalTitle.textContent = place.name;
+      modalBadges.innerHTML = [
+        ...(place.type || []).map(type => `<span class="badge">${type}</span>`),
+        place.image_needed ? '<span class="badge warn">Image needed</span>' : '',
+        place.verification_status === 'community_reference_only' ? '<span class="badge verify">Verify details</span>' : ''
+      ].join('');
+
+      const tips = place.visit_tips || {};
+      const tipsList = [
+        tips.best_time ? `<li><strong>Best time:</strong> ${tips.best_time}</li>` : '',
+        tips.duration ? `<li><strong>Suggested duration:</strong> ${tips.duration}</li>` : '',
+        ...(tips.notes || []).map(note => `<li>${note}</li>`)
+      ].join('');
+
+      const adminList = Object.entries(place.admin_area || {}).map(([k, v]) => `<li><strong>${k}:</strong> ${v}</li>`).join('');
+      const sourcesHtml = (place.sources || []).length
+        ? `<ul>${place.sources.map(src => `<li><a class="source-link" href="${src.url}" target="_blank" rel="noopener noreferrer">${src.label}</a></li>`).join('')}</ul>`
+        : '<p>No source links listed.</p>';
+
+      const galleryCards = (place.images || []).map(img => {
+        const link = toDirectImageUrl(img.image_url) || toDirectImageUrl(img.url) || commonsPageToImage(img.commons_page) || normalizeHttpUrl(img.commons_page);
+        if (!link) return '';
+        return `<a class="link-card" href="${link}" target="_blank" rel="noopener noreferrer">
+          <strong>${img.title || 'Photo'}</strong>
+          <span>${img.license || 'Image link'}</span>
+          <span>${img.attribution || ''}</span>
+        </a>`;
+      }).filter(Boolean).join('');
+
+      const fallbackPhoto = getPhotoReference(place.id);
+      const photoRefBlock = fallbackPhoto
+        ? `<a class="link-card" href="${fallbackPhoto.url}" target="_blank" rel="noopener noreferrer"><strong>${fallbackPhoto.title}</strong><span>Source: ${fallbackPhoto.source}</span><span>Open page for reference photo(s)</span></a>`
+        : '';
+
+      const maps = mapLink(place);
+      const narrative = buildNarrative(place);
+
+      modalBody.innerHTML = `
+        <section class="detail-group">
+          <h3>Cultural story & local saying</h3>
+          <p>${narrative}</p>
+        </section>
+
+        <section class="detail-group">
+          <h3>Why visit</h3>
+          ${(place.why_go || []).length ? `<ul>${place.why_go.map(item => `<li>${item}</li>`).join('')}</ul>` : '<p>Not specified.</p>'}
+        </section>
+
+        <section class="detail-group">
+          <h3>Visitor guidance</h3>
+          ${tipsList ? `<ul>${tipsList}</ul>` : '<p>Not specified.</p>'}
+        </section>
+
+        <section class="detail-group">
+          <h3>Administrative area</h3>
+          ${adminList ? `<ul>${adminList}</ul>` : '<p>Not specified.</p>'}
+          <a class="map-link" href="${maps}" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+        </section>
+
+        <section class="detail-group">
+          <h3>Clear description</h3>
+          <p>${place.summary || 'No summary available.'}</p>
+        </section>
+
+        <section class="detail-group">
+          <h3>Photographs & references</h3>
+          ${(galleryCards || photoRefBlock) ? `<div class="links-grid">${galleryCards}${photoRefBlock}</div>` : '<p>No photos listed yet; verify and add trusted image sources.</p>'}
+        </section>
+
+        <section class="detail-group">
+          <h3>Sources</h3>
+          ${sourcesHtml}
+        </section>
+      `;
+
+      modal.showModal();
+      closeModalBtn.focus();
+    }
+
+    createChips();
+    renderCards();
+
+    chipsEl.addEventListener('click', (event) => {
+      const chip = event.target.closest('.chip');
+      if (!chip) return;
+      activeType = chip.dataset.type;
+      [...chipsEl.querySelectorAll('.chip')].forEach(el => el.setAttribute('aria-pressed', String(el === chip)));
+      renderCards();
+    });
+
+    searchInput.addEventListener('input', renderCards);
+
+    cardsEl.addEventListener('click', (event) => {
+      const card = event.target.closest('.card');
+      if (!card) return;
+      const place = data.places.find(p => p.id === card.dataset.id);
+      if (place) renderModal(place);
+    });
+
+    cardsEl.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      const card = event.target.closest('.card');
+      if (!card) return;
+      event.preventDefault();
+      const place = data.places.find(p => p.id === card.dataset.id);
+      if (place) renderModal(place);
+    });
+
+    closeModalBtn.addEventListener('click', () => modal.close());
+
+    modal.addEventListener('click', (event) => {
+      const rect = modal.getBoundingClientRect();
+      const inBounds = rect.top <= event.clientY && event.clientY <= rect.top + rect.height && rect.left <= event.clientX && event.clientX <= rect.left + rect.width;
+      if (!inBounds) modal.close();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal.open) modal.close();
+    });
+  </script>
+</body>
+</html>
