@@ -1,0 +1,54 @@
+diff --git a/data/schema.example.json b/data/schema.example.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..e308488c3aa491a1546f5c96d7cc37ffa7891f12
+--- /dev/null
++++ b/data/schema.example.json
+@@ -0,0 +1,48 @@
++{
++  "site": {
++    "name": "Mahabubnagar Hidden Gems",
++    "updated": "2026-02-20"
++  },
++  "routes": [
++    {
++      "id": "weekend-loop",
++      "name": "Weekend Loop (2–4 hrs)",
++      "placeIds": ["pillalamarri", "pedda-cheruvu", "mayuri-park"]
++    }
++  ],
++  "places": [
++    {
++      "id": "koilkonda-fort",
++      "name": "Koilkonda Fort",
++      "type": "Heritage",
++      "tags": ["fort", "history"],
++      "moods": ["sunset", "trek", "heritage", "science"],
++      "featured": true,
++      "hook": "Stone gates climbing into a wind-swept skyline.",
++      "summary": "Hilltop fort with dramatic gateways and views.",
++      "whatToSee": ["Main gateways", "Fort steps", "Hilltop panorama"],
++      "bestShots": ["Gateway silhouette", "Golden-hour ridge"],
++      "respectNotes": ["Carry water", "Do not disturb structures"],
++      "rating": 4.3,
++      "coordinates": { "lat": 16.8777, "lng": 78.2466 },
++      "sourceLinks": [
++        {
++          "label": "Mahabubnagar District - Koilkonda Fort",
++          "url": "https://mahabubnagar.telangana.gov.in/koilkonda-fort/"
++        }
++      ],
++      "images": [
++        {
++          "id": "koilkonda-main",
++          "provider": "wikimedia_commons",
++          "title": "Koilkonda Fort (Mahbubnagar)",
++          "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Koilkonda_Fort(Mahbubnagar).jpg",
++          "directUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Koilkonda_Fort(Mahbubnagar).jpg?width=1600",
++          "license": "CC BY-SA 4.0",
++          "author": "From file page",
++          "attribution": "Photo by author, license via Wikimedia Commons"
++        }
++      ]
++    }
++  ]
++}

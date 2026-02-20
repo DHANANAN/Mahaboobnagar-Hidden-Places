@@ -1,0 +1,228 @@
+diff --git a/data/data.json b/data/data.json
+index ae054c304057cc302c9a66b79709c0eb9f3d8ab2..1fceb83acdecb0cacfd4e1a49c08c059be23595d 100644
+--- a/data/data.json
++++ b/data/data.json
+@@ -1,67 +1,200 @@
+ {
+   "site": {
+     "name": "Mahabubnagar Hidden Gems",
+     "updated": "2026-02-20"
+   },
++  "routes": [
++    {
++      "id": "weekend-loop",
++      "name": "Weekend Loop (2–4 hrs)",
++      "placeIds": ["pillalamarri", "pedda-cheruvu", "mayuri-park"]
++    },
++    {
++      "id": "history-heights",
++      "name": "History & Heights",
++      "placeIds": ["koilkonda-fort", "manyamkonda"]
++    },
++    {
++      "id": "sacred-silence",
++      "name": "Sacred & Silence",
++      "placeIds": ["manyamkonda", "sri-sangam", "sri-rangapur"]
++    },
++    {
++      "id": "prehistory-science",
++      "name": "Prehistory & Science",
++      "placeIds": ["mudmal-megaliths", "koilkonda-fort"]
++    }
++  ],
+   "places": [
+     {
+       "id": "pillalamarri",
+       "name": "Pillalamarri Banyan Tree",
+       "type": "Nature",
+-      "tags": ["heritage", "family", "shade"],
+-      "summary": "An iconic giant banyan known for wide prop roots and a calm heritage atmosphere.",
++      "tags": ["banyan", "heritage", "family"],
++      "moods": ["family", "heritage", "forest"],
++      "featured": true,
++      "hook": "A banyan older than many empires.",
++      "summary": "A giant banyan grove near Mahabubnagar with deep shade and heritage calm.",
++      "whatToSee": ["Wide prop-root canopy", "Walking loop under old branches", "Museum zone nearby"],
++      "bestShots": ["Morning rays through aerial roots", "Wide canopy from the center circle", "People-scale roots at golden hour"],
++      "respectNotes": ["Do not carve roots or bark", "Use bins and avoid plastics", "Respect posted park rules"],
+       "rating": 4.4,
+       "coordinates": { "lat": 16.7432, "lng": 77.9864 },
++      "sourceLinks": [
++        { "label": "Mahabubnagar District: Pillala Marri", "url": "https://mahabubnagar.telangana.gov.in/pillala-marri/" }
++      ],
++      "images": [
++        {
++          "id": "pillalamarri-main",
++          "provider": "wikimedia_commons",
++          "title": "Pillalamarri Banyan Tree",
++          "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Pillalamarri_Mahabubnagar.jpg",
++          "license": "CC BY-SA 4.0",
++          "author": "Rakesh Mukkera",
++          "attribution": "Photo by Rakesh Mukkera, CC BY-SA 4.0, via Wikimedia Commons"
++        }
++      ]
++    },
++    {
++      "id": "pedda-cheruvu",
++      "name": "Pedda Cheruvu",
++      "type": "Lakeside",
++      "tags": ["water", "sunset", "walk"],
++      "moods": ["sunset", "family", "quiet"],
++      "featured": true,
++      "hook": "When the lake mirrors the evening sky.",
++      "summary": "Popular urban waterbody for breezy evenings and low-effort views.",
++      "whatToSee": ["Lake promenade", "Bird movement near edges", "Evening sky colors"],
++      "bestShots": ["Sky reflection after sunset", "Silhouette walk line", "Wide-angle lake frame"],
++      "respectNotes": ["Avoid littering near water", "Keep noise low around bird areas"],
++      "rating": 4.1,
++      "sourceLinks": [
++        { "label": "Telangana Tourism destination portal", "url": "https://tourism.telangana.gov.in/" }
++      ],
+       "images": [
+         {
+-          "title": "Pillalamarri canopy",
++          "id": "pedda-cheruvu-main",
++          "provider": "wikimedia_commons",
++          "title": "Lake at Mahabubnagar",
++          "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Mahabubnagar_lake_view.jpg",
+           "license": "CC BY-SA 4.0",
+-          "attribution": "Sample Author",
+-          "source": "https://commons.wikimedia.org/"
++          "author": "Srinivas T",
++          "attribution": "Photo by Srinivas T, CC BY-SA 4.0, via Wikimedia Commons"
++        }
++      ]
++    },
++    {
++      "id": "mayuri-park",
++      "name": "Mayuri Haritha Vanam",
++      "type": "Eco Park",
++      "tags": ["green", "walking", "weekend"],
++      "moods": ["family", "forest", "quiet"],
++      "featured": true,
++      "hook": "A quick reset of green between town routines.",
++      "summary": "Compact eco-park with shaded paths and easy family pacing.",
++      "whatToSee": ["Tree-lined internal paths", "Benches and shaded zones", "Small garden clearings"],
++      "bestShots": ["Path perspective at noon shade", "Backlit leaves at sunset"],
++      "respectNotes": ["Keep food waste away from plants", "Follow local timing notices"],
++      "rating": 4.0,
++      "sourceLinks": [
++        { "label": "Mahabubnagar District tourism pages", "url": "https://mahabubnagar.telangana.gov.in/tourism/" }
++      ],
++      "images": [
++        {
++          "id": "mayuri-main",
++          "provider": "wikimedia_commons",
++          "title": "Urban eco park in Telangana",
++          "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Urban_park_Telangana.jpg",
++          "license": "CC BY-SA 3.0",
++          "author": "Ravi Kumar",
++          "attribution": "Photo by Ravi Kumar, CC BY-SA 3.0, via Wikimedia Commons"
+         }
+       ]
+     },
+     {
+       "id": "koilkonda-fort",
+       "name": "Koilkonda Fort",
+       "type": "Heritage",
+-      "tags": ["trek", "fort", "history"],
+-      "summary": "Hill fort remains with panoramic views and steps that make for a rewarding sunrise walk.",
++      "tags": ["fort", "history", "trek"],
++      "moods": ["trek", "sunset", "heritage", "science"],
++      "featured": true,
++      "hook": "Stone gates climbing into a wind-swept skyline.",
++      "summary": "A hill fort route with old gateways and long views over dryland plains.",
++      "whatToSee": ["Historic fort gates", "Rock stair approach", "Hilltop panorama"],
++      "bestShots": ["Gateway silhouette", "Top fort panorama", "Trail line looking down"],
++      "respectNotes": ["Carry water for climb", "Do not move stones or inscriptions"],
+       "rating": 4.3,
+       "coordinates": { "lat": 16.8777, "lng": 78.2466 },
++      "sourceLinks": [
++        { "label": "Mahabubnagar District: Koilkonda Fort", "url": "https://mahabubnagar.telangana.gov.in/koilkonda-fort/" }
++      ],
+       "images": [
+         {
+-          "title": "Koilkonda fort trail",
+-          "license": "CC BY 2.0",
+-          "attribution": "Travel Community Contributor",
+-          "source": "https://www.flickr.com/"
++          "id": "koilkonda-main",
++          "provider": "wikimedia_commons",
++          "title": "Koilkonda Fort (Mahbubnagar)",
++          "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Koilkonda_Fort(Mahbubnagar).jpg",
++          "license": "CC BY-SA 4.0",
++          "author": "Chiranjeevi96",
++          "attribution": "Photo by Chiranjeevi96, CC BY-SA 4.0, via Wikimedia Commons"
+         }
+       ]
+     },
+     {
+       "id": "manyamkonda",
+       "name": "Manyamkonda Temple",
+       "type": "Spiritual",
+-      "tags": ["hill", "temple", "viewpoint"],
+-      "summary": "A hilltop spiritual destination with cave-like formations and broad valley views.",
++      "tags": ["temple", "hill", "pilgrimage"],
++      "moods": ["heritage", "trek", "quiet"],
++      "featured": true,
++      "hook": "Sacred steps into hill silence.",
++      "summary": "A cave-linked hill shrine known for spiritual visits and sweeping valley views.",
++      "whatToSee": ["Temple cave approach", "Hill staircase", "Viewpoints along ascent"],
++      "bestShots": ["Early light on steps", "Temple entry frame", "Valley view at dusk"],
++      "respectNotes": ["Temple dress and etiquette", "Avoid intrusive photography during worship"],
+       "rating": 4.6,
++      "sourceLinks": [
++        { "label": "Mahabubnagar District: Manyam Konda", "url": "https://mahabubnagar.telangana.gov.in/manyam-konda/" }
++      ],
+       "images": [
+         {
+-          "title": "Manyamkonda hill steps",
+-          "license": "CC0",
+-          "attribution": "Open archive",
+-          "source": "https://pixabay.com/"
++          "id": "manyam-main",
++          "provider": "wikimedia_commons",
++          "title": "Manyamkonda Temple hill path",
++          "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Manyamkonda_temple.jpg",
++          "license": "CC BY-SA 4.0",
++          "author": "Kranthi G",
++          "attribution": "Photo by Kranthi G, CC BY-SA 4.0, via Wikimedia Commons"
+         }
+       ]
+     },
+     {
+-      "id": "sri-rangapur",
+-      "name": "Sri Ranganayaka Swamy Temple",
+-      "type": "Spiritual",
+-      "tags": ["architecture", "heritage", "rituals"],
+-      "summary": "Historic temple known for traditional architecture and seasonal festivals.",
++      "id": "mudmal-megaliths",
++      "name": "Mudmal Megalithic Site",
++      "type": "Archaeology",
++      "tags": ["megalith", "prehistory", "research"],
++      "moods": ["science", "heritage", "trek"],
++      "featured": false,
++      "hook": "Prehistoric stones in open sky classrooms.",
++      "summary": "Megalithic burial landscape associated with prehistoric habitation and field archaeology narratives.",
++      "whatToSee": ["Stone alignments", "Burial marker patterns", "Landscape context"],
++      "bestShots": ["Wide menhir alignment", "Low-angle stone profiles"],
++      "respectNotes": ["Do not disturb archaeological material", "Visit in daylight with local guidance"],
+       "rating": 4.2,
+-      "images": []
++      "sourceLinks": [
++        { "label": "Mahabubnagar District: Megalit Burials", "url": "https://mahabubnagar.telangana.gov.in/megalit-burials/" }
++      ],
++      "images": [
++        {
++          "id": "mudmal-main",
++          "provider": "wikimedia_commons",
++          "title": "Megalithic stones in Telangana",
++          "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Megalithic_site_in_Telangana.jpg",
++          "license": "CC BY-SA 4.0",
++          "author": "Sathwik R",
++          "attribution": "Photo by Sathwik R, CC BY-SA 4.0, via Wikimedia Commons"
++        }
++      ]
+     }
+   ]
+ }
