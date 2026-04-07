@@ -1,672 +1,387 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="day">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mahabubnagar Hidden Gems & Landmarks</title>
-  <style>
-    :root {
-      --bg: #fffaf2;
-      --surface: #ffffff;
-      --text: #2f2420;
-      --muted: #6b5f57;
-      --orange-1: #f59f2f;
-      --orange-2: #eb7f2c;
-      --green-1: #2fa86e;
-      --green-2: #188b58;
-      --soft: #ffe9cf;
-      --danger-soft: #fff1e8;
-      --shadow: 0 14px 30px rgba(103, 76, 49, 0.13);
-      --radius: 18px;
-    }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Mahabubnagar Gems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root,[data-theme="day"]{
+  --bg:#fdf6ec;--bg2:#f5eada;--surface:#fffaf3;--surface2:#f8edd8;
+  --text:#2a1a08;--text2:#5c3d1e;--muted:#8a6a44;
+  --accent:#b05e1e;--gold:#c48b2b;--accent2:#2d6a3f;
+  --border:rgba(160,100,40,.22);
+  --shadow:0 8px 32px rgba(80,40,10,.13);
+  --shadow-lg:0 24px 64px rgba(80,40,10,.22);
+  --topbar-bg:rgba(253,246,236,.95);--hero-text:#fffaf0;
+  --toggle-bg:#e8d5b0;--card-img-h:200px;
+  --drawer-bg:#fffaf3;--overlay:rgba(30,15,5,.55);
+}
+[data-theme="night"]{
+  --bg:#0d1117;--bg2:#131a24;--surface:#161e2e;--surface2:#1c2535;
+  --text:#e8d9c0;--text2:#b09870;--muted:#7a8fa8;
+  --accent:#e8a84a;--gold:#d4a830;--accent2:#4caf80;
+  --border:rgba(100,140,200,.18);
+  --shadow:0 8px 32px rgba(0,0,0,.4);
+  --shadow-lg:0 24px 64px rgba(0,0,0,.6);
+  --topbar-bg:rgba(13,17,23,.97);--hero-text:#f0e6d0;
+  --toggle-bg:#1e2d42;--drawer-bg:#131a24;--overlay:rgba(0,0,0,.72);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--bg);color:var(--text);line-height:1.6;transition:background .3s,color .3s;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none}
+img{display:block;max-width:100%}
+ul{list-style:none}
+button{cursor:pointer;font-family:inherit}
 
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      color: var(--text);
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background:
-        radial-gradient(circle at 10% 10%, rgba(245,159,47,.22) 0, transparent 30%),
-        radial-gradient(circle at 88% 16%, rgba(47,168,110,.2) 0, transparent 35%),
-        linear-gradient(180deg, #fff8ef 0%, #fffdf8 48%, #ffffff 100%);
-      line-height: 1.5;
-    }
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 70% 50% at 20% 10%,rgba(196,139,43,.13) 0,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(45,106,63,.10) 0,transparent 55%),radial-gradient(ellipse 40% 30% at 50% 50%,rgba(176,94,30,.07) 0,transparent 60%);animation:breathe 12s ease-in-out infinite}
+[data-theme="night"] body::before{background:radial-gradient(ellipse 70% 50% at 15% 15%,rgba(100,160,230,.09) 0,transparent 60%),radial-gradient(ellipse 60% 40% at 85% 75%,rgba(60,100,180,.08) 0,transparent 55%),radial-gradient(ellipse 35% 25% at 50% 50%,rgba(212,168,48,.06) 0,transparent 60%)}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.04) translateY(-6px)}}
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(255, 252, 246, 0.94);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #f3dcc1;
-      padding: .85rem .9rem;
-    }
+.stars{display:none;position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+[data-theme="night"] .stars{display:block}
+.stars span{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--d,3s) ease-in-out infinite;animation-delay:var(--dl,0s);opacity:0}
+@keyframes twinkle{0%,100%{opacity:0}50%{opacity:var(--op,.7)}}
 
-    .topbar-inner { max-width: 1120px; margin: 0 auto; }
+.topbar{position:sticky;top:0;z-index:50;background:var(--topbar-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:.7rem 0;transition:background .3s,border-color .3s}
+.topbar-inner{max-width:1200px;margin:0 auto;padding:0 1.1rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.6rem;margin-right:auto}
+.brand-icon{font-size:1.5rem}
+h1.site-title{font-family:'Cinzel',serif;font-size:clamp(1rem,1.5vw + .6rem,1.45rem);font-weight:700;color:var(--accent);letter-spacing:.04em;line-height:1.1}
+h1.site-title span{display:block;font-size:.6em;font-weight:400;color:var(--muted);letter-spacing:.12em;font-family:'Crimson Pro',serif;font-style:italic}
+.theme-toggle{width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--toggle-bg);font-size:1.2rem;display:flex;align-items:center;justify-content:center;transition:background .25s,transform .2s;flex-shrink:0}
+.theme-toggle:hover{transform:rotate(20deg) scale(1.08)}
 
-    h1 {
-      margin: 0 0 .7rem;
-      line-height: 1.2;
-      font-size: clamp(1.2rem, 1rem + 1.7vw, 1.9rem);
-      background: linear-gradient(90deg, var(--orange-2), var(--orange-1), var(--green-1));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+.filter-bar{background:var(--surface2);border-bottom:1px solid var(--border);padding:.65rem 0;transition:background .3s}
+.filter-inner{max-width:1200px;margin:0 auto;padding:0 1.1rem;display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+.search-wrap{flex:1;min-width:200px;display:flex;align-items:center;gap:.5rem;background:var(--surface);border:1px solid var(--border);border-radius:2rem;padding:.4rem .9rem;transition:box-shadow .2s,border-color .2s,background .3s}
+.search-wrap:focus-within{box-shadow:0 0 0 3px rgba(196,139,43,.2);border-color:var(--gold)}
+.search-wrap input{border:0;background:transparent;font-size:.97rem;color:var(--text);font-family:inherit;width:100%;outline:0}
+.search-wrap input::placeholder{color:var(--muted)}
+.filter-chips{display:flex;gap:.4rem;flex-wrap:wrap}
+.chip{border:1px solid var(--border);background:var(--surface);color:var(--text2);border-radius:2rem;padding:.28rem .75rem;font-size:.82rem;font-family:'Cinzel',serif;letter-spacing:.03em;transition:all .2s}
+.chip:hover,.chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}
 
-    .search-wrap {
-      display: flex;
-      gap: .7rem;
-      align-items: center;
-      width: 100%;
-      border: 1px solid transparent;
-      background:
-        linear-gradient(#fff, #fff) padding-box,
-        linear-gradient(90deg, rgba(245,159,47,.55), rgba(47,168,110,.45)) border-box;
-      border-radius: 16px;
-      padding: .7rem .9rem;
-      box-shadow: var(--shadow);
-      position: relative;
-      min-height: 52px;
-    }
-    .search-wrap::before {
-      content: "";
-      position: absolute;
-      left: 3rem;
-      right: .9rem;
-      bottom: .55rem;
-      height: 1px;
-      background: linear-gradient(90deg, rgba(235,127,44,.35), rgba(24,139,88,.35));
-      pointer-events: none;
-    }
-    .search-wrap input {
-      border: 0;
-      width: 100%;
-      outline: 0;
-      font-size: 1rem;
-      color: var(--text);
-      background: transparent;
-      padding-bottom: .1rem;
-    }
-    .search-wrap:focus-within {
-      box-shadow: 0 0 0 2px rgba(47,168,110,.2), var(--shadow);
-    }
+.hero{position:relative;background:linear-gradient(135deg,#3a1f08 0%,#5a3010 35%,#2d4a22 75%,#1a3015 100%);overflow:hidden;padding:4rem 1.1rem 3.5rem;text-align:center}
+[data-theme="night"] .hero{background:linear-gradient(135deg,#06090f 0%,#0d1828 40%,#091524 75%,#060e18 100%)}
+.hero::before{content:"";position:absolute;inset:0;opacity:.5;animation:drift 20s linear infinite;background-image:radial-gradient(circle 1px at 20% 30%,rgba(255,220,100,.3) 0,transparent 0),radial-gradient(circle 1px at 75% 20%,rgba(255,220,100,.25) 0,transparent 0),radial-gradient(circle 1.5px at 45% 70%,rgba(255,220,100,.2) 0,transparent 0)}
+@keyframes drift{from{background-position:0 0}to{background-position:60px 60px}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--bg) 0%,transparent 35%);pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:780px;margin:0 auto}
+.hero-eyebrow{font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.25em;color:rgba(255,210,100,.7);text-transform:uppercase;margin-bottom:.9rem}
+.hero h2{font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw+.5rem,3.2rem);font-weight:700;color:var(--hero-text);line-height:1.15;margin-bottom:1rem}
+.hero h2 em{font-style:italic;font-family:'Crimson Pro',serif;color:rgba(255,200,80,.9)}
+.hero-sub{font-size:clamp(1rem,1.5vw+.2rem,1.2rem);color:rgba(255,240,210,.75);max-width:60ch;margin:0 auto;font-style:italic;line-height:1.7}
+.hero-divider{width:80px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1.4rem auto}
 
-    .chips {
-      display: flex;
-      gap: .5rem;
-      overflow: auto;
-      padding-top: .72rem;
-      scrollbar-width: thin;
-    }
-    .chip {
-      min-height: 40px;
-      border: 1px solid #f3d7b9;
-      background: #fff;
-      color: var(--text);
-      border-radius: 999px;
-      padding: .4rem .78rem;
-      cursor: pointer;
-      white-space: nowrap;
-      font-weight: 600;
-      font-size: .86rem;
-      transition: all .25s ease;
-    }
-    .chip[aria-pressed="true"] {
-      background: linear-gradient(90deg, rgba(245,159,47,.28), rgba(47,168,110,.22));
-      border-color: #d8c19e;
-      transform: translateY(-1px);
-    }
+.section-head{text-align:center;padding:2.2rem 1.1rem .8rem;max-width:1200px;margin:0 auto}
+.section-head h2{font-family:'Cinzel',serif;font-size:clamp(1.2rem,2vw+.4rem,1.9rem);color:var(--accent);letter-spacing:.05em;margin-bottom:.4rem}
+.section-head p{color:var(--muted);font-style:italic;font-size:1.05rem}
+.section-rule{width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:.7rem auto 0}
 
-    .hero {
-      max-width: 1120px;
-      margin: .95rem auto 0;
-      padding: 0 .9rem;
-    }
+.history{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2.5rem 1.1rem 3rem;transition:background .3s}
+.history-inner{max-width:1200px;margin:0 auto}
+.history h2{font-family:'Cinzel',serif;font-size:clamp(1.3rem,2vw+.5rem,2.1rem);color:var(--accent);text-align:center;letter-spacing:.05em;margin-bottom:.5rem}
+.history-sub{text-align:center;color:var(--muted);font-style:italic;font-size:1.05rem;margin-bottom:2rem}
+.timeline{display:grid;grid-template-columns:1fr;gap:1.1rem;position:relative}
+.timeline::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,transparent,var(--gold) 15%,var(--accent) 50%,var(--accent2) 85%,transparent);border-radius:2px}
+.era{padding:1rem 1rem 1rem 1.6rem;background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:0 .75rem .75rem 0;transition:transform .25s,box-shadow .25s,background .3s}
+.era:hover{transform:translateX(4px);box-shadow:var(--shadow)}
+.era-period{font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;margin-bottom:.3rem}
+.era h3{font-family:'Cinzel',serif;font-size:1.05rem;color:var(--accent);margin-bottom:.45rem}
+.era p{color:var(--text2);font-size:.97rem;line-height:1.65}
+@media(min-width:900px){.timeline{grid-template-columns:repeat(2,1fr);padding-left:0}.timeline::before{display:none}.era{border-left:3px solid var(--gold)}}
+@media(min-width:1100px){.timeline{grid-template-columns:repeat(3,1fr)}}
 
-    .hero-card {
-      border-radius: var(--radius);
-      background:
-        linear-gradient(130deg, rgba(235,127,44,.95), rgba(245,159,47,.9) 45%, rgba(47,168,110,.9));
-      color: #fffdf8;
-      box-shadow: var(--shadow);
-      padding: 1.1rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,.16) 1.4px, transparent 1.4px);
-      background-size: 14px 14px;
-      pointer-events: none;
-      opacity: .5;
-      animation: drift 14s linear infinite;
-    }
-    @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-20px);} }
+.landmarks{max-width:1200px;margin:0 auto;padding:0 1.1rem 3rem}
+.status-line{color:var(--muted);font-size:.9rem;margin:.5rem 0 1.2rem;font-style:italic}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.1rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:1rem;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,background .3s;cursor:pointer}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.card:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.card-img-wrap{overflow:hidden;height:var(--card-img-h);flex-shrink:0}
+.card-img{width:100%;height:var(--card-img-h);object-fit:cover;display:block;transition:transform .4s}
+.card:hover .card-img{transform:scale(1.06)}
+.card-placeholder{width:100%;height:var(--card-img-h);display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--surface2),var(--bg2));color:var(--muted);font-size:2.8rem;flex-shrink:0}
+.card-body{padding:.85rem;flex:1;display:flex;flex-direction:column;gap:.3rem}
+.card-cat{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.card-title{font-family:'Cinzel',serif;font-size:.98rem;color:var(--text);line-height:1.3;font-weight:600}
+.card-desc{font-size:.92rem;color:var(--text2);line-height:1.55;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-hint{font-size:.77rem;color:var(--muted);font-style:italic;margin-top:.2rem}
+.no-results{grid-column:1/-1;text-align:center;padding:3rem 1rem;color:var(--muted);font-style:italic;font-size:1.1rem}
 
-    .hero h2 { margin: 0 0 .35rem; font-size: clamp(1.05rem, .9rem + 1.3vw, 1.45rem); }
-    .hero p { margin: 0; max-width: 65ch; }
+/* ── OVERLAY ── */
+.overlay{position:fixed;inset:0;z-index:90;background:var(--overlay);opacity:0;pointer-events:none;transition:opacity .3s}
+.overlay.open{opacity:1;pointer-events:all}
 
-    .essay-grid {
-      margin-top: .95rem;
-      display: grid;
-      gap: .8rem;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-    .essay {
-      background: #fff;
-      border: 1px solid #ffd9be;
-      border-radius: 14px;
-      padding: .82rem;
-      box-shadow: var(--shadow);
-    }
-    .essay h3 { margin: 0 0 .3rem; font-size: .95rem; color: #7a2452; }
-    .essay p { margin: 0; color: #513b54; font-size: .9rem; }
+/* ── DRAWER ── */
+.drawer{
+  position:fixed;right:0;top:0;bottom:0;z-index:100;
+  width:min(540px,100vw);
+  background:var(--drawer-bg);
+  box-shadow:-8px 0 60px rgba(0,0,0,.3);
+  transform:translateX(105%);
+  transition:transform .38s cubic-bezier(.22,.68,0,1.15);
+  display:flex;flex-direction:column;overflow:hidden;
+}
+.drawer.open{transform:translateX(0)}
 
-    main { max-width: 1120px; margin: 1rem auto; padding: 0 .9rem 1.4rem; }
-    .results-note { color: var(--muted); margin: 0 0 .85rem; }
+.drawer-img-wrap{position:relative;height:240px;flex-shrink:0;overflow:hidden;background:var(--surface2)}
+.drawer-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 7s ease}
+.drawer.open .drawer-img{transform:scale(1.06)}
+.drawer-img-wrap::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--drawer-bg) 0%,transparent 55%)}
+.drawer-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4.5rem;background:linear-gradient(135deg,var(--surface2),var(--bg2))}
 
-    .grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
-    }
+.drawer-close{
+  position:absolute;top:.8rem;right:.9rem;z-index:10;
+  width:38px;height:38px;border-radius:50%;
+  border:1px solid var(--border);background:var(--surface);
+  font-size:.95rem;display:flex;align-items:center;justify-content:center;
+  color:var(--text2);transition:background .2s,transform .2s;
+}
+.drawer-close:hover{background:var(--accent);color:#fff;transform:scale(1.1)}
 
-    .card {
-      border-radius: var(--radius);
-      border: 1px solid #ffdecb;
-      box-shadow: var(--shadow);
-      background: #fff;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform .2s ease, box-shadow .2s ease;
-      text-align: left;
-    }
-    .card:hover,
-    .card:focus-visible { transform: translateY(-2px); box-shadow: 0 18px 30px rgba(83,43,16,.18); outline: none; }
+.drawer-body{flex:1;overflow-y:auto;padding:1.3rem 1.5rem 2.5rem;display:flex;flex-direction:column;gap:1rem}
+.drawer-body::-webkit-scrollbar{width:4px}
+.drawer-body::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 
-    .cover, .placeholder {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-    }
-    .placeholder {
-      display: grid;
-      place-items: center;
-      color: #7f5f54;
-      font-weight: 600;
-      background: linear-gradient(120deg, #ffe7dd, #fff2da);
-      text-align: center;
-      padding: .5rem;
-    }
+.d-cat{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.d-title{font-family:'Cinzel',serif;font-size:clamp(1.2rem,3vw,1.7rem);color:var(--accent);line-height:1.2;font-weight:700}
+.d-tagline{font-style:italic;color:var(--muted);font-size:1.02rem;line-height:1.55;border-left:3px solid var(--gold);padding-left:.75rem;margin-top:.2rem}
 
-    .content { padding: .92rem; }
-    .title { margin: 0; font-size: 1.03rem; }
+.d-divider{height:1px;background:var(--border)}
 
-    .badges, .meta-badges {
-      display: flex;
-      gap: .35rem;
-      flex-wrap: wrap;
-      margin: .52rem 0;
-    }
-    .badge {
-      border-radius: 999px;
-      border: 1px solid #ffcda8;
-      background: #fff5dd;
-      color: #723500;
-      font-size: .75rem;
-      font-weight: 700;
-      padding: .22rem .58rem;
-    }
-    .badge.warn { background: #fff8dd; color: #7c5200; }
-    .badge.verify { background: var(--danger-soft); color: #8d4d00; }
+.d-section h4{font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.15em;color:var(--text2);text-transform:uppercase;margin-bottom:.55rem;display:flex;align-items:center;gap:.4rem}
+.d-section p{font-size:.97rem;color:var(--text2);line-height:1.7}
+.d-section ul{display:flex;flex-direction:column;gap:.35rem}
+.d-section li{font-size:.95rem;color:var(--text2);line-height:1.6;padding-left:1rem;position:relative}
+.d-section li::before{content:"◆";position:absolute;left:0;font-size:.55rem;color:var(--gold);top:.35em}
 
-    .summary {
-      margin: 0;
-      color: #493144;
-      font-size: .93rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
+.d-pills{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.3rem}
+.pill{font-size:.75rem;font-family:'Cinzel',serif;letter-spacing:.04em;border:1px solid var(--border);border-radius:2rem;padding:.22rem .65rem;color:var(--muted);background:var(--surface2)}
 
-    dialog {
-      width: min(940px, 95vw);
-      border: 0;
-      border-radius: 20px;
-      padding: 0;
-      box-shadow: 0 25px 60px rgba(23, 10, 37, .45);
-    }
-    dialog::backdrop { background: rgba(19, 8, 35, .7); }
+.d-actions{display:flex;gap:.7rem;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:.4rem;background:var(--accent);color:#fff;border:0;border-radius:2rem;padding:.55rem 1.2rem;font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.06em;text-decoration:none;transition:background .2s,transform .15s}
+.btn-primary:hover{background:var(--gold);transform:translateY(-1px);text-decoration:none;color:#fff}
+.btn-outline{display:inline-flex;align-items:center;gap:.4rem;background:transparent;color:var(--accent);border:1px solid var(--accent);border-radius:2rem;padding:.5rem 1rem;font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.06em;text-decoration:none;transition:all .2s}
+.btn-outline:hover{background:var(--accent);color:#fff;text-decoration:none}
 
-    .modal-head {
-      position: sticky;
-      top: 0;
-      background: #fffefc;
-      border-bottom: 1px solid #ffe0c8;
-      padding: .9rem 1rem .55rem;
-      display: flex;
-      justify-content: space-between;
-      gap: .7rem;
-      align-items: start;
-    }
+footer{background:var(--surface);border-top:1px solid var(--border);text-align:center;padding:2rem 1.1rem;color:var(--muted);font-size:.9rem;font-style:italic;transition:background .3s,border-color .3s}
+footer strong{color:var(--accent);font-style:normal;font-family:'Cinzel',serif}
 
-    .close-btn {
-      border: 0;
-      border-radius: 999px;
-      width: 44px;
-      height: 44px;
-      background: #ffefd8;
-      cursor: pointer;
-      font-weight: 800;
-    }
-
-    .modal-body {
-      padding: .55rem 1rem 1rem;
-      max-height: 75vh;
-      overflow: auto;
-    }
-
-    .detail-group { margin: .9rem 0; }
-    .detail-group h3 { margin: 0 0 .35rem; font-size: 1rem; color: #712253; }
-    .detail-group p { margin: 0; color: #4a3751; }
-    ul { margin: .3rem 0 0; padding-left: 1.1rem; }
-    li { margin-bottom: .25rem; }
-
-    .links-grid {
-      display: grid;
-      gap: .6rem;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    }
-
-    .link-card {
-      border: 1px solid #ffdabb;
-      border-radius: 12px;
-      background: #fffaf3;
-      padding: .58rem;
-      text-decoration: none;
-      color: #493246;
-      min-height: 74px;
-      display: grid;
-      gap: .22rem;
-      align-content: start;
-    }
-
-    .map-link {
-      display: inline-flex;
-      margin-top: .4rem;
-      text-decoration: none;
-      font-weight: 700;
-      color: #7b1f57;
-      background: #ffe7ee;
-      border: 1px solid #ffc0d2;
-      border-radius: 999px;
-      padding: .38rem .7rem;
-    }
-
-    .source-link { color: #5c2ad6; word-break: break-word; }
-
-    footer {
-      text-align: center;
-      padding: 1.1rem .9rem 1.5rem;
-      color: #5a4660;
-      font-size: .9rem;
-    }
-
-    @media (max-width: 420px) {
-      .content { padding: .8rem; }
-      .title { font-size: .98rem; }
-      .summary { font-size: .89rem; }
-    }
-  </style>
+@media(max-width:600px){:root{--card-img-h:170px}.hero{padding:2.5rem 1rem 2rem}.drawer-img-wrap{height:190px}.drawer-body{padding:1rem 1.1rem 2rem}}
+</style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <h1>Mahabubnagar Hidden Gems &amp; Landmarks</h1>
-      <label class="search-wrap" for="searchInput" aria-label="Search places">
-        <span aria-hidden="true">🔎</span>
-        <input id="searchInput" type="search" placeholder="Search by place, type, or tag" />
-      </label>
-      <div class="chips" id="chips" role="toolbar" aria-label="Filter by place type"></div>
-    </div>
-  </header>
 
-  <section class="hero">
-    <div class="hero-card">
-      <h2>Telangana warmth, Mahabubnagar soul, and a biryani-masala color story</h2>
-      <p>From ancient stones and hill forts to sacred cave shrines and lakeside sunsets, this guide blends cultural memory, local sayings, and practical travel details so each stop feels like visiting a trusted local home.</p>
-    </div>
-    <div class="essay-grid" aria-label="Why visit essays">
-      <article class="essay">
-        <h3>Why these places matter</h3>
-        <p>These destinations represent Telangana’s layered identity: spiritual devotion, Deccan-era history, ecological resilience, and everyday community life.</p>
-      </article>
-      <article class="essay">
-        <h3>Local-home feeling</h3>
-        <p>The tone follows <em>mana ooru, mana samskruti</em> — “our town, our culture” — helping visitors connect with place, people, and respectful travel habits.</p>
-      </article>
-      <article class="essay">
-        <h3>Culture + flavor trail</h3>
-        <p>Think of this journey like biryani masala: heritage, devotion, nature, and stories layered together for a rich and memorable experience.</p>
-      </article>
-    </div>
-  </section>
+<div class="stars" id="stars" aria-hidden="true"></div>
+<div class="overlay" id="overlay" aria-hidden="true"></div>
 
-  <main>
-    <p class="results-note" id="resultsNote"></p>
-    <section class="grid" id="cards" aria-live="polite"></section>
-  </main>
+<!-- DRAWER -->
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+  <button class="drawer-close" id="drawerClose" aria-label="Close">✕</button>
+  <div class="drawer-img-wrap" id="dImgWrap"></div>
+  <div class="drawer-body">
+    <div>
+      <div class="d-cat" id="dCat"></div>
+      <div class="d-title" id="dTitle"></div>
+      <p class="d-tagline" id="dTagline"></p>
+    </div>
+    <div class="d-divider"></div>
+    <div class="d-section">
+      <h4>🏛️ Background</h4>
+      <p id="dBg"></p>
+    </div>
+    <div class="d-section">
+      <h4>🧭 How &amp; When to Visit</h4>
+      <ul id="dVisit"></ul>
+    </div>
+    <div class="d-section">
+      <h4>✨ Highlights</h4>
+      <div class="d-pills" id="dPills"></div>
+    </div>
+    <div class="d-divider"></div>
+    <div class="d-actions" id="dActions"></div>
+  </div>
+</aside>
 
-  <dialog id="placeModal" aria-label="Place details">
-    <div class="modal-head">
-      <div>
-        <h2 id="modalTitle" style="margin:0 0 .32rem;"></h2>
-        <div class="meta-badges" id="modalBadges"></div>
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-icon">🏯</span>
+      <h1 class="site-title">Mahabubnagar Gems<span>Palamuru — Land of Ancient Kings</span></h1>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀️</button>
+  </div>
+</header>
+
+<!-- FILTER -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <div class="search-wrap">
+      <span aria-hidden="true">🔍</span>
+      <input type="search" id="searchInput" placeholder="Search landmarks, forts, temples…" autocomplete="off"/>
+    </div>
+    <div class="filter-chips" id="chips" role="toolbar" aria-label="Filter by category"></div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Telangana · Palamuru District</p>
+    <h2>Where <em>Warriors Carved</em> the Deccan's Soul</h2>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">Mahabubnagar — ancient Palamuru — has been the crossroads of every great southern dynasty. From Satavahana coins to Kakatiya fortresses, from Sufi dargahs to megalithic observatories, this land holds more stories per square kilometre than almost anywhere in India.</p>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section class="history" id="history">
+  <div class="history-inner">
+    <h2>Palamuru Through the Ages</h2>
+    <p class="history-sub">Why every dynasty wanted this land — and what they left behind</p>
+    <div class="timeline">
+      <div class="era"><div class="era-period">3rd c. BCE – 3rd c. CE</div><h3>Satavahana Era</h3><p>The great Satavahana Empire used Palamuru's Krishna–Bhima corridor as a trade artery linking the Arabian Sea to the Bay of Bengal. Coins, terracotta art, and megalithic burial traditions from this period are still surfacing at Chinnamaruru and Maganoor. The land fed empires with cotton, iron, and strategic river crossings.</p></div>
+      <div class="era"><div class="era-period">6th – 8th c. CE</div><h3>Badami Chalukya &amp; Early Temples</h3><p>The Badami Chalukyas left extraordinary structural temples across the southern Deccan. Alampur's Jogulamba shrine — a Shakti Peetham — and the Alvanpalli Jain temple were built in this era, establishing Palamuru as a zone of spiritual gravity that no conqueror could ignore.</p></div>
+      <div class="era"><div class="era-period">9th – 11th c. CE</div><h3>Rashtrakutas &amp; Kandur Cholas</h3><p>The enigmatic Kandur Cholas made Kandur village their seat. Their hero stones, carved with old Telugu script, survive to this day. This era forged the Telugu-language identity of the region and established it as a frontier of Chola influence in the Deccan.</p></div>
+      <div class="era"><div class="era-period">12th – 14th c. CE</div><h3>Kakatiya Supremacy</h3><p>Under the Kakatiyas, Palamuru became a fortified military zone. Hilltop forts at Koilkonda, Khilla Ghanpur, and Pangal were built guarding river crossings and cotton-trade routes. This is when Palamuru's identity as a "warrior land" was permanently cast.</p></div>
+      <div class="era"><div class="era-period">14th – 16th c. CE</div><h3>Vijayanagara &amp; Bahmani</h3><p>Palamuru became a contested border between two of medieval India's most powerful states. The Pangal Fort's seven gateways and the Krishna River crossings were perennial flashpoints. Gadwal's fortified town grew as a local power centre under this tumultuous backdrop.</p></div>
+      <div class="era"><div class="era-period">16th – 17th c. CE</div><h3>Qutb Shahi Consolidation</h3><p>The Golconda Sultanate transformed Palamuru's forts into administrative hubs. The Koilkonda inscription of 1550 CE marks their formal claim. Sufi saints arrived with the Sultanate, and dargahs like Jahangir Peer became community anchors that still draw thousands annually.</p></div>
+      <div class="era"><div class="era-period">17th – 18th c. CE</div><h3>Mughal Interlude &amp; Asaf Jahi</h3><p>Aurangzeb's 1687 campaign annexed Golconda. The Nizams of Hyderabad inherited the entire Deccan and reorganised Palamuru as a revenue district. The name "Mahabubnagar" dates to the Nizam era — though the land's history stretches two millennia further.</p></div>
+      <div class="era"><div class="era-period">Across All Eras</div><h3>Why Every Dynasty Needed Palamuru</h3><p>Three rivers — Krishna, Bhima, and Tungabhadra — make Palamuru one of the most irrigated upland zones in peninsular India. Cotton, iron ore, and strategic crossing routes between north and south Deccan made this land an economic prize. Whoever held Palamuru controlled trade, tax, and the military road between coast and inland.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LANDMARKS -->
+<div class="section-head">
+  <h2>Discover the Gems</h2>
+  <p>Click any card to explore its history, visit guide &amp; highlights</p>
+  <div class="section-rule"></div>
+</div>
+<main class="landmarks" aria-live="polite">
+  <p class="status-line" id="statusLine"></p>
+  <div class="cards-grid" id="cardsGrid"></div>
+</main>
+
+<footer><strong>Mahabubnagar Gems</strong> — Celebrating the ancient soul of Palamuru, Telangana.<br>Always verify local timings, access rules, and safety conditions before travel.</footer>
+
+<script>
+/* THEME */
+const root=document.documentElement,themeBtn=document.getElementById('themeToggle');
+let theme=localStorage.getItem('mgTheme')||'day';
+const applyTheme=t=>{root.setAttribute('data-theme',t);themeBtn.textContent=t==='day'?'🌙':'☀️';localStorage.setItem('mgTheme',t)};
+applyTheme(theme);
+themeBtn.addEventListener('click',()=>{theme=theme==='day'?'night':'day';applyTheme(theme)});
+
+/* STARS */
+(()=>{const c=document.getElementById('stars');for(let i=0;i<120;i++){const s=document.createElement('span'),sz=Math.random()*2.5+.5;s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${(Math.random()*4+2).toFixed(1)}s;--dl:${(Math.random()*6).toFixed(1)}s;--op:${(Math.random()*.6+.3).toFixed(2)};`;c.appendChild(s)}})();
+
+/* DATA */
+const L=[
+  {id:"pillalamarri",name:"Pillalamarri Banyan Tree",cat:"Iconic Landmark",emoji:"🌳",img:"https://image2url.com/r2/default/images/1775535614378-8cec0570-ff89-4d0d-87d6-78e9c9923012.png",desc:"An 800-year-old banyan covering nearly four acres with an on-site museum.",tagline:"A living elder — where generations gather under roots wider than time.",bg:"The Pillalamarri is believed to be over 800 years old and covers nearly 4 acres — one of the largest banyan trees in Asia. Its aerial prop roots form what appears to be a small forest. According to local tradition, the tree was already ancient when the Bahmani Sultanate was being established. An on-site museum documents its ecological and cultural significance. The name means 'Children's Banyan' in Telugu, a reference to the child-like prop roots surrounding the mother trunk.",visit:["Best time: October–February — cooler weather, fewer crowds","Location: ~12 km from Mahabubnagar city","Entry: Small nominal fee; government-managed site","Duration: 1–2 hours","Tip: Arrive early morning for light filtering through aerial roots"],hi:["800-year-old living canopy","Aerial prop-root maze","Heritage museum on site","Walking loop trail"],map:"https://www.google.com/maps/search/?api=1&query=Pillalamarri+Banyan+Tree+Mahabubnagar"},
+  {id:"jogulamba",name:"Shri Jogulamba Ammavari Temple",cat:"Iconic Landmark",emoji:"🛕",img:"https://i.ibb.co/1J8Pk25C/Q088QSmq.jpg",desc:"A 7th-century Badami Chalukyan structure and one of 18 Maha Shakti Peethams of India.",tagline:"Where the Goddess rests — and has been worshipped for fifteen centuries.",bg:"The Jogulamba temple at Alampur is one of the 18 Maha Shakti Peethams. Built by the Badami Chalukyas in the 7th century CE, it sits at the confluence of the Tungabhadra and Krishna rivers. The original temple was partially submerged when the Srisailam reservoir was created; the deity was relocated. The surrounding Navabrahma temples are masterpieces of early Chalukyan stone architecture and are protected as nationally significant monuments.",visit:["Location: Alampur, ~90 km from Mahabubnagar city","Best time: Navratri (Oct) for major celebrations","Hours: Generally 6 AM – 8 PM","Dress code: Modest dress required; remove footwear","Nearest rail: Kurnool Road, ~45 km"],hi:["One of 18 Shakti Peethams","Navabrahma temples (7th c.)","Krishna–Tungabhadra confluence","Navratri celebrations"],map:"https://www.google.com/maps/search/?api=1&query=Shri+Jogulamba+Ammavari+Temple+Alampur"},
+  {id:"gadwal-fort",name:"Gadwal Fort",cat:"Iconic Landmark",emoji:"🏰",img:"https://i.ibb.co/GQqFxD8W/Rfwc-Mus-S.jpg",desc:"A 17th-century citadel housing a 32-foot cannon and ancient temples.",tagline:"A citadel that held its own when empires collapsed around it.",bg:"The Gadwal Fort was the seat of the Gadwal Samsthanam — a principality that navigated Mughal decline, Maratha rise, and Nizam consolidation with remarkable skill. Built largely in the 17th–18th centuries, the fort houses the enormous 32-foot Gadwal Toppi cannon, a Saraswati temple, and a Ramalayam shrine — a rare blending of military and devotional architecture. The Gadwal rulers were also famous patrons of Telugu literature.",visit:["Location: Gadwal town, ~70 km from Mahabubnagar","Entry: Free / nominal","Duration: 2–3 hours","Best time: October–February","Tip: Inner temples are active — ask locally for puja timings"],hi:["32-foot 'Gadwal Toppi' cannon","Saraswati & Rama temples","Double-walled citadel","Samsthanam palace remains"],map:"https://www.google.com/maps/search/?api=1&query=Gadwal+Fort"},
+  {id:"manyam-konda",name:"Manyam Konda Temple",cat:"Iconic Landmark",emoji:"⛰️",img:"https://i.ibb.co/YTh1SDXK/NU5c-Au-As.jpg",desc:"A hill shrine inside a natural cave, associated with Lord Venkateshwara.",tagline:"Sacred steps into hill silence — where rock becomes sanctum.",bg:"Manyamkonda is a natural hill with a cave shrine dedicated to Lord Venkateshwara, making it a local mirror of the famed Tirumala. The district administration recognises it as a major spiritual centre, and an annual festival on Magha Purnima (January–February full moon) draws thousands of pilgrims. The cave's natural formations are incorporated into the temple architecture, creating an organic sacred space that predates formal temple construction.",visit:["Location: ~8 km from Mahabubnagar city","Best time: Magha Purnima festival (Jan–Feb)","Note: Steep steps — comfortable footwear advised","Duration: Half-day","Tip: Hilltop offers sweeping views of the Deccan plateau at sunrise"],hi:["Natural cave sanctum","Magha Purnima festival","Deccan plateau hilltop panorama","Rock-integrated temple architecture"],map:"https://www.google.com/maps/search/?api=1&query=Manyam+Konda+Temple+Mahabubnagar"},
+  {id:"koil-sagar",name:"Koil Sagar Dam",cat:"Iconic Landmark",emoji:"💧",img:"https://i.ibb.co/XZTfxc8Y/zs-AGp-Ybl.jpg",desc:"A scenic reservoir nestled between two mountains — peaceful and photogenic.",tagline:"Mountains cradling water — the quiet face of Palamuru's resilience.",bg:"Koil Sagar is a reservoir on the Manikka River, built in the early 20th century under the Nizam's administration to address chronic drought. Nestled between two gentle hills, it became both an irrigation lifeline and an accidental scenic retreat. The surrounding forest and rock landscape makes it one of the most photogenic day-trip destinations in the district — a favourite with photographers chasing the post-monsoon full-water reflections.",visit:["Location: ~40 km from Mahabubnagar","Best time: Post-monsoon (Oct–Jan) for full reservoir","Duration: Half-day","Activities: Photography, nature walk along bund road","Access: Motorable road to viewpoint"],hi:["Twin hill reservoir setting","Full-water monsoon reflections","Forest birdwatching","Peaceful picnic spot"],map:"https://www.google.com/maps/search/?api=1&query=Koil+Sagar+Dam"},
+  {id:"jurala",name:"Jurala Dam",cat:"Iconic Landmark",emoji:"🌊",img:"https://i.ibb.co/kgbf4CtY/jl4g-UFDd.jpg",desc:"A major hydroelectric project across the Krishna River.",tagline:"The harnessed pulse of the Krishna — powering Palamuru's future.",bg:"Jurala Dam is one of Telangana's most significant hydroelectric projects, built across the Krishna River and producing around 240 MW of power. Constructed in the 1990s, the dam transformed downstream agriculture of the district. During monsoon season, the sight of water crashing through multiple spillways is genuinely dramatic. The dam's backwaters are also important for migratory bird watching in winter months.",visit:["Location: ~130 km from Mahabubnagar, near Jurala town","Best time: August–September to see spillways in action","Dam view platform open to public","Note: Entry to dam structure is restricted","Tip: Combine with a visit to nearby Somasila backwaters"],hi:["240 MW hydroelectric project","Monsoon spillway spectacle","Krishna River panorama","Migratory birds in winter"],map:"https://www.google.com/maps/search/?api=1&query=Jurala+Dam"},
+  {id:"mallela",name:"Mallela Thirtham Waterfall",cat:"Iconic Landmark",emoji:"🏞️",img:"https://i.ibb.co/RL3ZL1G/UUBt-Qe-M1.jpg",desc:"A 150-foot waterfall cascading into a rocky pool deep within the Nallamala forest.",tagline:"A secret the Nallamala has kept for centuries — worth every step.",bg:"Mallela Thirtham is one of Telangana's most spectacular waterfalls, tucked within the Nallamala hills inside the Amrabad Tiger Reserve. The waterfall drops approximately 150 feet into a clear pool surrounding a natural Shivalinga. It is both a religious pilgrimage and a breathtaking natural phenomenon. Visiting requires a forest entry permit and a significant trek — the isolation has preserved both its natural beauty and its spiritual atmosphere.",visit:["Location: ~150 km from Mahabubnagar, inside Amrabad Tiger Reserve","Permit: Forest department permit required","Best time: October–January (post-monsoon)","Trek: ~3–4 km one way through forest","Guide: Local forest guide mandatory — arrange at checkpoint"],hi:["150-foot waterfall","Natural Shivalinga in pool","Nallamala forest interior trek","Tiger Reserve landscape"],map:"https://www.google.com/maps/search/?api=1&query=Mallela+Thirtham+Waterfall"},
+  {id:"mudumal",name:"Mudumal Megalithic Menhirs",cat:"Archaeology & Engineering",emoji:"🗿",img:"https://i.ibb.co/whVYVB0S/SRvlt-Ql8.jpg",desc:"A prehistoric astronomical site with over 500 standing stones — Telangana's Stonehenge.",tagline:"Four thousand years of sky-watching, written in stone.",bg:"The Mudumal megalithic site near Mudmal village features over 500 standing stones (menhirs) in patterns that archaeologists believe served astronomical and ritual functions. Dating to roughly 2000–1000 BCE, the site is comparable to Stonehenge in cultural significance. Heritage enthusiasts are campaigning for UNESCO recognition. Stone alignments appear to track solstices and agricultural seasons — evidence of a sophisticated prehistoric civilisation that once thrived on this Deccan plateau.",visit:["Location: Mudmal village, ~70 km from Mahabubnagar","Access: Village road to site","Best time: Any season; sunrise/sunset for dramatic menhir shadows","Guide: Local villagers are knowledgeable and welcoming","Note: Open-air site, no formal entry system yet"],hi:["500+ standing menhirs","Astronomical alignment patterns","~2000 BCE origin","UNESCO recognition campaign"],map:"https://www.google.com/maps/search/?api=1&query=Mudumal+Megalithic+Menhirs"},
+  {id:"alvanpalli",name:"Alvanpalli Jain Temple",cat:"Archaeology & Engineering",emoji:"🛕",img:"https://i.ibb.co/Jwv2zrm7/BGAG3QG1.jpg",desc:"A rare 7th-century structure built entirely from brick and terracotta.",tagline:"Fired earth, enduring faith — Jainism's quiet footprint on the Deccan plateau.",bg:"The Alvanpalli Jain Temple is an exceptionally rare example of early medieval architecture entirely constructed from brick and terracotta — a material choice that sets it apart from the stone temples of the same period. Built in the 7th century CE during the Chalukya era, it reflects the presence of a significant Jain merchant community in the Deccan interior. The terracotta decorative panels showing Jain Tirthankaras are of considerable academic interest and are rarely seen elsewhere in the region.",visit:["Location: Alvanpalli village, Mahabubnagar district","Access: Rural road — best by private vehicle","Best time: October–March","Note: Active religious site; seek local permission before photography","Duration: 1–2 hours"],hi:["7th-century brick & terracotta","Jain Tirthankara panels","Rare Deccan Jain heritage","Chalukya-period iconography"],map:"https://www.google.com/maps/search/?api=1&query=Alvanpalli+Jain+Temple"},
+  {id:"sarala-sagar",name:"Sarala Sagar",cat:"Archaeology & Engineering",emoji:"⚙️",img:"https://i.ibb.co/LdQD0m30/xpk6Szaf.jpg",desc:"An engineering marvel with a self-operating automatic siphon system — still functioning.",tagline:"Where colonial hydraulics outsmarted drought — and still works a century later.",bg:"Sarala Sagar (Wanaparthy area) is a reservoir notable for its automatic siphon spillway — water discharges automatically when the reservoir reaches a set level, without gates or human intervention. Built in the early 20th century under the Nizam's government, the siphon system lay dormant for decades before reactivating after heavy rainfall, drawing engineering interest and media coverage. It is one of the few surviving examples of this technology still in its original environment.",visit:["Location: Wanaparthy area, ~80 km from Mahabubnagar","Best time: August–October to see siphon potentially active","Access: Motorable road","Note: Check water levels before visiting — the siphon is the unique draw","Duration: 1–2 hours"],hi:["Automatic siphon spillway (no gates)","100-year-old working design","Colonial-era hydraulic engineering","Scenic reservoir setting"],map:"https://www.google.com/maps/search/?api=1&query=Sarala+Sagar"},
+  {id:"chinnamaruru",name:"Chinnamaruru Excavations",cat:"Archaeology & Engineering",emoji:"🏺",img:"https://i.ibb.co/C5Yp44FP/x-LWIx-To4.jpg",desc:"An archaeological site revealing Satavahana-era structures and terracotta art.",tagline:"Digging into 2,000 years of urban life on the Deccan plateau.",bg:"Chinnamaruru is an archaeological site where excavations have revealed structures, coins, and terracotta art from the Satavahana period (c. 3rd century BCE – 3rd century CE). The finds suggest a significant settlement existed here during one of India's most prosperous ancient empires. The site adds to the growing picture of Palamuru as an economically active zone — not a backwater — during the early historical period, connected to long-distance trade networks of the ancient world.",visit:["Location: Chinnamaruru village, district interior","Access: Rural roads; best with local knowledge","Note: Active archaeological zone — do not disturb finds","Best time: November–February","Tip: Contact district archaeology office for guided access"],hi:["Satavahana-era settlement","Terracotta art & coins","2nd–3rd century CE structures","Ongoing archaeological research"],map:"https://www.google.com/maps/search/?api=1&query=Chinnamaruru+Excavations"},
+  {id:"kandur",name:"Kandur Village Hero Stones",cat:"Archaeology & Engineering",emoji:"🗽",img:"https://i.ibb.co/r2tcXpBN/ru77VZLA.jpg",desc:"The ancient Chola capital with 10th-century carved stones and old Telugu inscriptions.",tagline:"Where warriors were immortalised in stone — and old Telugu found its voice.",bg:"Kandur village is believed to have been the capital of the Kandur Cholas — a branch dynasty that controlled much of Mahabubnagar district in the 9th–11th centuries CE. The site features numerous hero stones (veeragallu) — carved memorials for warriors who fell in battle — inscribed in early Telugu script. These stones are primary sources for understanding the political geography, social norms, and language evolution of the Deccan in the pre-Kakatiya period.",visit:["Location: Kandur village, Mahabubnagar district","Access: By road from Mahabubnagar town","Best time: October–February","Note: Hero stones are in situ around the village; ask locals for guidance","Duration: 2–3 hours for the full cluster"],hi:["10th-century veeragallu","Early Telugu inscriptions","Kandur Chola capital site","Rare Deccan epigraphic record"],map:"https://www.google.com/maps/search/?api=1&query=Kandur+Village+Hero+Stones"},
+  {id:"saleshwaram",name:"Saleshwaram Cave Temple",cat:"Forest & Water",emoji:"🌿",img:"https://i.ibb.co/xyGszfN/txl2rw5e.jpg",desc:"An exclusive deep-forest shrine with a dramatic seasonal waterfall.",tagline:"Where the forest itself becomes the temple — and the waterfall, its bell.",bg:"Saleshwaram is a Shiva temple inside a cave within the Nallamala forest, accessible only on foot. The site features a natural rock formation venerated as a Shivalinga and a spectacular seasonal waterfall. The isolation of the site — historically a serious trek — has made it one of Telangana's most meaningful pilgrimage destinations for devotees willing to make the effort. The surrounding forest is exceptionally rich in flora and bird life.",visit:["Location: Nallamala forest range, accessible from Kalwakurthy area","Permit: Forest department entry required","Best time: October–December (post-monsoon, waterfall active)","Trek: ~4–6 km through forest; trekking footwear essential","Guide: Mandatory forest guide — arrange at forest checkpoint"],hi:["Natural cave Shivalinga","Seasonal roaring waterfall","Dense Nallamala forest trek","Rich forest bird life"],map:"https://www.google.com/maps/search/?api=1&query=Saleshwaram+Cave+Temple"},
+  {id:"farahabad",name:"Farahabad View Point",cat:"Forest & Water",emoji:"🔭",img:"https://i.ibb.co/YFTstmKq/m9KGq5WK.jpg",desc:"A high-altitude viewpoint over the Amrabad Tiger Reserve canopy.",tagline:"A billion trees stretching to the horizon — and you, at the edge.",bg:"Farahabad is a viewpoint within the Amrabad Tiger Reserve — India's second-largest tiger reserve by area. From a rocky outcrop, the view extends across an almost unbroken forest canopy. The reserve is home to tigers, leopards, sloth bears, and exceptional bird diversity. The viewpoint name references a historical garden from the Nizam's era, hinting at a long human connection to this dramatic landscape that far predates the reserve's formal creation.",visit:["Location: Inside Amrabad Tiger Reserve; entry via Achampet or Kalwakurthy","Permit: Tiger reserve entry permit required; book in advance","Best time: November–February for clear views","Safari: Jeep safaris for wildlife spotting","Note: Overnight eco-lodge possible with prior booking"],hi:["Amrabad Tiger Reserve canopy","Tiger, leopard, sloth bear habitat","India's 2nd-largest tiger reserve","Nizam-era historical reference"],map:"https://www.google.com/maps/search/?api=1&query=Farahabad+View+Point"},
+  {id:"somasila",name:"Somasila Backwaters",cat:"Forest & Water",emoji:"⛵",img:"https://i.ibb.co/yBG2ctqb/QDOVl7nv.jpg",desc:"A riverside village offering scenic views and boating on the Krishna River.",tagline:"The unhurried river — where Palamuru exhales.",bg:"The Somasila area along the Krishna River offers calm backwater scenery and boat rides along one of peninsular India's great rivers. Far less visited than coastal backwaters, Somasila's appeal is its quiet — the river bends, the forest on the far bank, the evening light on the water. Local fishermen operate small boats and the pace of life here has changed little in generations. The area also has historical significance as an ancient river-crossing point.",visit:["Location: Krishna River corridor, ~90 km from Mahabubnagar","Best time: October–February","Activities: Local boat rides, riverbank walks, photography","Note: No formal tourist infrastructure — genuine off-grid experience","Tip: Bring food and water; local provisions are minimal"],hi:["Krishna River boat rides","Undeveloped natural riverbank","Sunset river photography","Authentic off-trail experience"],map:"https://www.google.com/maps/search/?api=1&query=Somasila+Backwaters"},
+  {id:"loddi",name:"Loddi Mallanna Gundam",cat:"Forest & Water",emoji:"🏊",img:"https://i.ibb.co/TDDZ2d8B/MT3ZKpbc.jpg",desc:"A hidden seasonal waterfall and natural pool revered by locals.",tagline:"Known only to those who seek it — a local secret worth keeping.",bg:"Loddi Mallanna Gundam is a seasonal waterfall and natural pool hidden in forested hills, dedicated to the folk deity Mallanna (an avatar of Shiva particularly venerated in Telangana). The site is not in major guidebooks and remains primarily a pilgrimage point for local devotees who visit especially during monsoon when the falls are active. The surrounding landscape is wild and relatively undisturbed — a genuine hidden gem.",visit:["Location: Forested hills, Mahabubnagar interior (ask locals for exact route)","Best time: August–October when falls are active","Access: Partly on foot through forest; local guide strongly recommended","Note: No facilities — carry water, food, first aid","Tip: Ask at the nearest village; locals are proud of this site"],hi:["Hidden seasonal waterfall","Natural forest pool","Mallanna folk deity shrine","Undiscovered & authentic"],map:"https://www.google.com/maps/search/?api=1&query=Loddi+Mallanna+Gundam"},
+  {id:"khilla-ghanpur",name:"Khilla Ghanpur Fort",cat:"Historical Fort",emoji:"🏯",img:"https://i.ibb.co/MDkwJ5V6/nzrg1vo-M.jpg",desc:"A Kakatiya-era hilltop fortress with ancient cannons and freshwater pools.",tagline:"Kakatiya stone, still speaking — for those who climb to listen.",bg:"Khilla Ghanpur is a hilltop fortification with origins in the Kakatiya period (12th–14th century CE). The fort features ancient cannons, a freshwater tank that still holds water, inscriptions, and commanding views over the surrounding plateau. It was strategically important for controlling the Deccan interior and bears architectural elements from multiple periods of occupation — Kakatiya, Bahmani, and Qutb Shahi layers are visible in the stonework.",visit:["Location: ~100 km from Mahabubnagar","Access: Steps to hilltop; approximately 30-minute climb","Best time: October–February; sunrise climb is spectacular","Duration: 2–3 hours","Carry: Water essential — no facilities on site"],hi:["Kakatiya-era fortification","Ancient cannons on hilltop","Freshwater cisterns still active","360° Deccan plateau views"],map:"https://www.google.com/maps/search/?api=1&query=Khilla+Ghanpur+Fort"},
+  {id:"pangal",name:"Pangal Fort",cat:"Historical Fort",emoji:"🏯",img:"https://i.ibb.co/Jj8dhnYd/CEsgj-JCs.jpg",desc:"A massive 13th-century fortress with seven gateways requiring a steep climb.",tagline:"Seven gates, seven centuries — each one a chapter of the Deccan's story.",bg:"Pangal Fort is one of the most impressive but least-visited forts in Telangana. Built primarily in the 13th century CE, the fort features seven successive gateways — a defensive design that forced attackers through multiple kill zones. The fort's massive stone walls, cisterns, temple remains, and bastions are in various states of preservation. The steep climb deters casual visitors, which has paradoxically preserved the site's raw authenticity.",visit:["Location: Pangal village, ~85 km from Mahabubnagar","Access: Steep rocky climb — good footwear essential","Best time: November–February (cool, manageable climb)","Duration: 3–4 hours for full circuit","Note: No formal guides — take a local from the village"],hi:["Seven successive defensive gateways","13th-century Kakatiya masonry","Temple remains within fort","Almost no tourist crowds"],map:"https://www.google.com/maps/search/?api=1&query=Pangal+Fort+Mahabubnagar"},
+  {id:"chandragad",name:"Chandragad Fort",cat:"Historical Fort",emoji:"🏯",img:"https://i.ibb.co/Df92nNPj/WAv-N5s-BO.jpg",desc:"A Peshwa-built military outpost overlooking the Krishna River gorge.",tagline:"Where Maratha ambition met the Deccan's southern edge.",bg:"Chandragad Fort sits above the Krishna River and was used as a military outpost by the Peshwa rulers of the Maratha Confederacy in the 18th century — making it the southernmost significant marker of Maratha territorial expansion into the Deccan. The fort's position on a rocky prominence above the river gorge gave it extraordinary strategic value. Its construction reflects later Maratha military architecture, distinct from the Kakatiya and Qutb Shahi styles dominant elsewhere in the district.",visit:["Location: Krishna River gorge, ~100 km from Mahabubnagar","Access: Partly motorable road, short climb to fort","Best time: October–February","Duration: 2–3 hours","Activities: Fort exploration + Krishna River views from battlements"],hi:["Maratha-era military architecture","Krishna River gorge views","Southernmost Maratha outpost","Genuinely off-the-trail"],map:"https://www.google.com/maps/search/?api=1&query=Chandragad+Fort"},
+  {id:"koilkonda",name:"Koilkonda Fort",cat:"Historical Fort",emoji:"🏯",img:"https://i.ibb.co/fGZPmNNC/T6q-PS1-Aq.jpg",desc:"A historic Qutb Shahi outpost with multiple gates and a 1550 CE inscription.",tagline:"Stone gates climbing into a wind-swept skyline — five centuries of watchfulness.",bg:"Koilkonda Fort is a well-preserved hilltop fort that served as an important Qutb Shahi outpost in the 16th century. The fort's most notable feature is an inscription dated 1550 CE confirming Qutb Shahi occupation. Multiple gateways, bastions, and internal structures tell the story of a strategically vital installation guarding the southern approach to Golconda. Earlier traces suggest Kakatiya foundations beneath the Qutb Shahi structure — two empires in one fort.",visit:["Location: Koilkonda village, ~50 km from Mahabubnagar","Access: Motorable road to base; 30-minute climb to fort","Best time: October–February; sunset climb recommended","Duration: 2–3 hours","Note: The 1550 inscription is near the main gateway — look carefully"],hi:["1550 CE Qutb Shahi inscription","Multiple defensive gateways","Kakatiya foundations underneath","Panoramic Deccan plains views"],map:"https://www.google.com/maps/search/?api=1&query=Koilkonda+Fort"},
+  {id:"jahangir-peer",name:"Jahangir Peer Dargah",cat:"Spiritual & Sacred",emoji:"🌙",img:"https://i.ibb.co/7txV3tvL/U36k-Hd-Rc.jpg",desc:"A 15th-century Sufi shrine holding the graves of two martyred brothers.",tagline:"Where Sufism found its Palamuru home — and never left.",bg:"The Jahangir Peer Dargah in Mahabubnagar town is dedicated to two Sufi brothers who came to the Deccan with the Qutb Shahi expansion in the 15th century. The dargah has been a centre of communal harmony for centuries — visited by Hindus, Muslims, and people of all faiths. The annual Urs draws thousands of devotees and is one of Mahabubnagar's most significant cultural events, reflecting the district's tradition of syncretic religious practice.",visit:["Location: Mahabubnagar city centre","Access: Easily reached by auto/taxi","Hours: Open daily; active during prayer times","Best time: Annual Urs celebration (dates vary) for full atmosphere","Note: Modest dress, remove footwear at entrance"],hi:["15th-century Sufi shrine","Annual Urs celebration","Inter-faith pilgrimage site","Part of Mahabubnagar's civic identity"],map:"https://www.google.com/maps/search/?api=1&query=Jahangir+Peer+Dargah"},
+  {id:"shuttari",name:"Hazrat Syed Abdul Kareem Shuttari Dargah",cat:"Spiritual & Sacred",emoji:"🌙",img:"https://i.ibb.co/zhYRcpFH/us-Gzsl-Am.jpg",desc:"A historic shrine where travellers prayed before entering the Nallamala forest.",tagline:"The last prayer before the forest — a waypoint as old as the road itself.",bg:"The dargah of Hazrat Syed Abdul Kareem Shuttari at Mannanur is associated with the Shuttari order of Sufism and is located at the historical entry point to the Nallamala forest — a dangerous and difficult terrain. Travellers, traders, and soldiers would stop here before entering the forest. The shrine represents the Sufi tradition of placing sacred spaces at liminal threshold locations — where journeys begin and the unknown starts.",visit:["Location: Mannanur, ~90 km from Mahabubnagar","Best time: Year-round; Urs days for atmosphere","Access: On NH route toward Nallamala/Srisailam","Tip: Pair well with Nallamala/Amrabad forest visit","Duration: 1 hour"],hi:["Shuttari Sufi order dargah","Forest threshold waypoint","Historical pilgrimage significance","Peaceful, uncrowded shrine"],map:"https://www.google.com/maps/search/?api=1&query=Hazrat+Syed+Abdul+Kareem+Shuttari+Dargah+Mannanur"},
+  {id:"uma-maheswaram",name:"Uma Maheswaram Temple",cat:"Spiritual & Sacred",emoji:"🛕",img:"https://i.ibb.co/3ntj6pg/Y3-Xk-Rak-C.jpg",desc:"A cliff-side temple known for its perennial natural spring and forest views.",tagline:"A spring that has never dried — and a god who has never left.",bg:"Uma Maheswaram is a Shiva–Parvati temple perched on a cliff within the Nallamala forest range, fed by a perennial natural spring that has never been known to dry — remarkable in drought-prone Palamuru. The temple's location offers panoramic views over forested ridges and the river valley below. It draws pilgrims from across Andhra Pradesh and Telangana, particularly for the Maha Shivaratri festival when a sea of devotees makes the forest climb.",visit:["Location: ~120 km from Mahabubnagar, inside forest zone","Access: Motorable road to a point; short forest walk to temple","Best time: Maha Shivaratri (Feb–Mar) or October–February","Facilities: Basic dharamshalas available near the temple","Note: The perennial spring is a sacred focal point — take time there"],hi:["Perennial natural spring","Cliff-top forest location","Shiva–Parvati iconography","Maha Shivaratri festival"],map:"https://www.google.com/maps/search/?api=1&query=Uma+Maheswaram+Temple"},
+  {id:"sangameshwaram",name:"Sri Sangameshwaram Temple",cat:"Spiritual & Sacred",emoji:"🛕",img:"https://i.ibb.co/jkLQDgP5/j1-Xd-YGPS.jpg",desc:"A unique 7th-century temple submerged in dam water for most of the year.",tagline:"A temple that appears and disappears with the river's breath.",bg:"Sri Sangameshwaram is a 7th-century Shiva temple that sits in the backwaters of the Srisailam reservoir. For most of the year, it is completely submerged. During peak summer when reservoir levels drop, the temple emerges from the water — sometimes just its spire, sometimes the full structure. Thousands of pilgrims visit in the brief window of visibility, wading or boating to the temple. It has become one of the most dramatic and spiritually charged experiences in Telangana.",visit:["Location: Srisailam backwaters, ~120 km from Mahabubnagar","Timing: Summer months (April–June) when reservoir drops","Visibility: Varies year-to-year — check local news before travelling","Access: Boat from nearby ghats when partially submerged","Tip: Check water level forecasts; some years the full temple emerges"],hi:["Seasonally submerged 7th-century temple","Boat pilgrimage experience","Srisailam reservoir setting","Iconic spire-from-water photograph"],map:"https://www.google.com/maps/search/?api=1&query=Sri+Sangameshwaram+Temple"},
+  {id:"gurdwara",name:"Gurdwara Majji Sahib",cat:"Spiritual & Sacred",emoji:"🙏",img:"https://i.ibb.co/nsF3KYMZ/WTC209Wu.jpg",desc:"A Sikh heritage site in Maddur mandal — Palamuru's plural spiritual tradition.",tagline:"The Guru's word, quietly kept — in the heart of the Deccan.",bg:"Gurdwara Majji Sahib in Thimma Reddi Palle (Maddur mandal) reflects the movement of Sikhs into the Deccan during and after the Mughal period. The site preserves community memory of Sikh presence in an area otherwise defined by Hindu and Islamic traditions — a testament to the plural spiritual map of Palamuru. The gurdwara serves a small but devoted community and is open to all visitors, offering a uniquely serene experience in this part of Telangana.",visit:["Location: Thimma Reddi Palle, Maddur mandal","Access: Rural road; best by private vehicle","Hours: Generally open daily; langar may be available","Note: All faiths welcome; cover head on entry","Duration: 1 hour"],hi:["Rare Deccan Sikh heritage site","Inter-faith welcome space","Community-maintained historic gurdwara","Reflects Palamuru's plural identity"],map:"https://www.google.com/maps/search/?api=1&query=Gurdwara+Majji+Sahib+Maddur"},
+  {id:"mayuri",name:"Mayuri Haritha Vanam",cat:"City Nature",emoji:"🌲",img:"https://i.ibb.co/SXGTKhgW/e-B8-LZBr0.jpg",desc:"An eco-tourism park on hilly terrain near the highway — Mahabubnagar's green lung.",tagline:"Mahabubnagar's green lung — where the city comes to breathe.",bg:"Mayuri Haritha Vanam is a government-developed eco-tourism park on hilly terrain near the Mahabubnagar–Jadcherla highway, created as part of Telangana's Haritha Haram greening initiative. The park offers shaded walking paths, viewpoints, and a peaceful city-edge escape. The name 'Mayuri' (peacock) nods to the region's wildlife heritage. It has become a popular evening and weekend destination, bringing a much-needed green space to the rapidly growing city.",visit:["Location: Near Mahabubnagar–Jadcherla highway","Best time: October–February; evenings year-round","Entry: Nominal fee","Duration: 2–3 hours","Activities: Walking trails, viewpoints, family picnics"],hi:["Shaded hilltop walking trails","City-edge nature escape","Telangana Haritha Haram initiative","Family-friendly facilities"],map:"https://www.google.com/maps/search/?api=1&query=Mayuri+Haritha+Vanam"},
+  {id:"pedda-cheruvu",name:"Pedda Cheruvu",cat:"City Nature",emoji:"🏞️",img:"https://i.ibb.co/RkWQXh8G/ifb6QY2g.jpg",desc:"A large natural lake directly within Mahabubnagar town.",tagline:"The town's mirror — reflecting sky, sunset, and the slow pace of Palamuru life.",bg:"Pedda Cheruvu (\"Big Lake\") is a large natural waterbody within the urban limits of Mahabubnagar city. The lake has been central to the town's geography for centuries — providing water for agriculture, supporting fishing communities, and serving as a social gathering space. The bund road around the lake is one of the town's most beloved walking routes, particularly at sunset. Migratory birds visit in winter, adding another dimension to its year-round appeal.",visit:["Location: Within Mahabubnagar city — walkable from centre","Best time: Year-round; sunset walks are finest","Duration: 1–2 hours","Activities: Bund road walk, sunset photography, winter birdwatching","Facilities: Small vendors along the bund"],hi:["Urban lake in city centre","Famous sunset bund walk","Winter migratory birds","Part of Mahabubnagar's daily rhythm"],map:"https://www.google.com/maps/search/?api=1&query=Pedda+Cheruvu+Mahabubnagar"},
+  {id:"sri-sangam",name:"Sri Sangam of Krishna & Bhima",cat:"City Nature",emoji:"🌊",img:"https://i.ibb.co/WvQ69TNV/l-Tq3ec-Px.jpg",desc:"The historically and religiously significant meeting point of two great rivers.",tagline:"Two rivers, one sacred breath — the spiritual heart of Palamuru's geography.",bg:"The confluence of the Krishna and Bhima rivers at Maganoor mandal holds deep religious significance — confluences (sangams) of major rivers are considered especially sacred in Hindu tradition. This sangam was also strategically vital through history, marking a key crossing on trade and military routes. Satavahana-era archaeological finds in the vicinity confirm human habitation and veneration of this site for over 2,000 years. The annual Magha Purnima gathering here is one of the district's most significant religious events.",visit:["Location: Maganoor mandal, ~70 km from Mahabubnagar","Best time: Magha Purnima (Jan–Feb full moon) for major gathering","Access: Motorable road to the ghats","Duration: Half-day","Activities: River dip (pilgrimage), photography, birding"],hi:["Krishna–Bhima confluence","2,000+ years of sacred significance","Satavahana archaeological zone","Magha Purnima annual pilgrimage"],map:"https://www.google.com/maps/search/?api=1&query=Sri+Sangam+Krishna+Bhima+Rivers"},
+];
+
+const CATS=['All',...[...new Set(L.map(l=>l.cat))]];
+let query='',activeCat='All';
+
+function buildChips(){
+  document.getElementById('chips').innerHTML=CATS.map(c=>`<button class="chip${c===activeCat?' active':''}" data-cat="${c}">${c}</button>`).join('');
+}
+
+function render(){
+  const q=query.toLowerCase().trim();
+  const list=L.filter(l=>( activeCat==='All'||l.cat===activeCat)&&(!q||`${l.name} ${l.cat} ${l.desc} ${l.tagline}`.toLowerCase().includes(q)));
+  document.getElementById('statusLine').textContent=`${list.length} landmark${list.length!==1?'s':''} found — click any card to explore`;
+  const grid=document.getElementById('cardsGrid');
+  if(!list.length){grid.innerHTML='<p class="no-results">No landmarks matched. Try a different search or category.</p>';return}
+  grid.innerHTML=list.map(l=>`
+    <article class="card" tabindex="0" role="button" data-id="${l.id}" aria-label="Explore ${l.name}">
+      <div class="card-img-wrap">
+        ${l.img?`<img class="card-img" src="${l.img}" alt="${l.name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=card-placeholder>${l.emoji}</div>'">`
+               :`<div class="card-placeholder">${l.emoji}</div>`}
       </div>
-      <button class="close-btn" id="closeModal" aria-label="Close details">✕</button>
-    </div>
-    <div class="modal-body" id="modalBody"></div>
-  </dialog>
+      <div class="card-body">
+        <div class="card-cat">${l.cat}</div>
+        <div class="card-title">${l.name}</div>
+        <p class="card-desc">${l.desc}</p>
+        <p class="card-hint">Tap to explore history &amp; visit guide ›</p>
+      </div>
+    </article>`).join('');
+}
 
-  <footer>
-    Always verify local timings, access rules, and safety conditions before travel.
-  </footer>
+/* DRAWER */
+const drawer=document.getElementById('drawer'),overlay=document.getElementById('overlay');
+let drawerOpen=false;
 
-  <script>
-    const data = {
-      "district": "Mahabubnagar",
-      "state": "Telangana",
-      "updated_iso": "2026-02-20",
-      "source_policy": {
-        "primary": ["Mahabubnagar District Administration tourism pages", "Telangana Tourism destination pages"],
-        "images": ["Wikimedia Commons (preferred)"],
-        "verification_note": "Some sites may have only community references; those must be labeled and verified."
-      },
-      "places": [
-        {"id":"pillalamarri-banyan","name":"Pillalamarri Banyan Tree","type":["Nature","Heritage"],"summary":"A famed banyan tree site near Mahabubnagar town; official page describes it as ~700 years old with a large spread and on-site visitor facilities.","why_go":["Iconic landmark","Shaded picnic-like atmosphere","Quick half-day visit"],"admin_area":{"district":"Mahabubnagar","mandal":"Mahabubnagar (as per district site context)"},"visit_tips":{"best_time":"Dec–Feb is highlighted as best season for the region (general destination guidance).","duration":"1–2 hours (typical quick visit)","notes":["Expect crowds on holidays; be mindful of animal facilities if present."]},"sources":[{"label":"Mahabubnagar District - Pillala Marri Tree","url":"https://mahabubnagar.telangana.gov.in/pillala-marri/"}],"images":[{"title":"Pillalamarri Mahabubnagar","commons_page":"https://commons.wikimedia.org/wiki/File:Pillalamarri_Mahabubnagar.jpg","license":"See Wikimedia file page","attribution":"From Wikimedia Commons (check file page for author/license)"}],"tags":["family","weekend","nature","photography"]},
-        {"id":"koilkonda-fort","name":"Koilkonda Fort","type":["History","Fort","Viewpoint"],"summary":"Hilltop fort described by the district page as an erstwhile Qutb Shahi outpost; mentions multiple gates and an inscription dated 1550.","why_go":["Trek + ruins","Great views","History nerd heaven"],"admin_area":{"district":"Mahabubnagar","mandal":"Koilkonda"},"visit_tips":{"duration":"2–4 hours","notes":["Carry water; uneven terrain; sun protection."]},"sources":[{"label":"Mahabubnagar District - Koilkonda Fort","url":"https://mahabubnagar.telangana.gov.in/koilkonda-fort/"}],"images":[{"title":"Koilkonda Fort (Mahbubnagar)","commons_page":"https://commons.wikimedia.org/wiki/File:Koilkonda_Fort(Mahbubnagar).jpg","license":"See Wikimedia file page","attribution":"From Wikimedia Commons (check file page for author/license)"}],"tags":["trek","ruins","sunset","photography"]},
-        {"id":"manyam-konda","name":"Manyam Konda (Sri Venkateshwara Temple)","type":["Spiritual","Cave Temple","Hill"],"summary":"Cave-located hill shrine; district page describes it as a major spiritual center near Mahabubnagar and notes an annual festival on Magha Purnima.","why_go":["Pilgrimage","Views + caves","Quiet hill vibe"],"admin_area":{"district":"Mahabubnagar","mandal":"Mahabubnagar (per district page)"},"visit_tips":{"duration":"Half-day","notes":["Respect temple customs; watch steps/rocks."]},"sources":[{"label":"Mahabubnagar District - Manyam Konda","url":"https://mahabubnagar.telangana.gov.in/manyam-konda/"},{"label":"Telangana Tourism - Mahabubnagar destination","url":"https://tourism.telangana.gov.in/destinations/mahabubnagar"}],"images":[],"image_needed":true,"suggested_query_terms":["Manyam Konda Mahabubnagar Wikimedia Commons","Sri Venkateshwara Temple Manyam Konda photo"]},
-        {"id":"mayuri-haritha-vanam","name":"Mayuri Haritha Vanam (Eco Park)","type":["Eco Park","Recreation","Nature"],"summary":"Eco-tourism / urban green space initiative described by the district page; positioned near the Mahbubnagar–Jadcherla highway with hilly forested terrain.","why_go":["Bright, modern hangout","Green space","Easy local getaway"],"admin_area":{"district":"Mahabubnagar"},"visit_tips":{"duration":"2–3 hours","notes":["Great for evening stroll content and quick reels."]},"sources":[{"label":"Mahabubnagar District - Mayuri Haritha Vanam","url":"https://mahabubnagar.telangana.gov.in/mayuri-haritha-vanam/"},{"label":"Mahabubnagar District - Tourist Places","url":"https://mahabubnagar.telangana.gov.in/tourist-places/"}],"images":[],"image_needed":true,"suggested_query_terms":["Mayuri Haritha Vanam Mahabubnagar Wikimedia Commons","Mayuri Eco Park Mahabubnagar photo"]},
-        {"id":"pedda-cheruvu","name":"Pedda Cheruvu (Big Lake)","type":["Lake","City Nature"],"summary":"Large natural lake in Mahabubnagar town described by the district page, including bund-road access around the lake.","why_go":["Sunset walks","Local everyday-life vibe","Simple scenic shots"],"admin_area":{"district":"Mahabubnagar"},"visit_tips":{"duration":"1–2 hours"},"sources":[{"label":"Mahabubnagar District - Pedda Cheruvu","url":"https://mahabubnagar.telangana.gov.in/pedda-cheruvu/"}],"images":[],"image_needed":true,"suggested_query_terms":["Pedda Cheruvu Mahabubnagar Wikimedia Commons","Peddacheruvu Mahabubnagar lake photo"]},
-        {"id":"krishna-bhima-sangam","name":"Sri Sangam of Krishna and Bhima Rivers","type":["River Confluence","Spiritual","Heritage"],"summary":"Confluence site described by the district page with religious importance and historical references.","why_go":["Confluence landscape","Pilgrimage significance","Heritage storytelling"],"admin_area":{"district":"Mahabubnagar","mandal":"Maganoor (as per district page)"},"visit_tips":{"duration":"2–4 hours"},"sources":[{"label":"Mahabubnagar District - Sri Sangam","url":"https://mahabubnagar.telangana.gov.in/sri-sangam-of-krishna-and-bheemarivers/"}],"images":[],"image_needed":true},
-        {"id":"mudmal-megaliths","name":"Megalithic Burials / Menhirs (Mudmal area)","type":["Archaeology","Prehistory","Landscape"],"summary":"District page describes a large megalithic burial landscape and menhir features in the Mudmal/Maganoor area.","why_go":["Rare prehistoric site","Science-y storytelling","Offbeat exploration"],"admin_area":{"district":"Mahabubnagar","mandal":"Maganoor"},"visit_tips":{"duration":"Half-day","notes":["Go with daylight; be respectful—this is a burial landscape."]},"sources":[{"label":"Mahabubnagar District - Megalit Burials","url":"https://mahabubnagar.telangana.gov.in/megalit-burials/"}],"images":[],"image_needed":true},
-        {"id":"gurdwara-manji-sahib-thimmareddipalle","name":"Gurdwara Majji/Manji Sahib (Thimma Reddi Palle, Maddur Mandal)","type":["Spiritual","Sikh Heritage"],"summary":"Included per user request. Currently found as a community reference online; not located on official tourism pages or Wikimedia in this pass.","admin_area":{"district":"Mahabubnagar","mandal":"Maddur"},"verification_status":"community_reference_only","sources":[{"label":"Community reference mentioning the gurdwara at Thimma Reddi Palle (Maddur Mandal)","url":"https://www.sikhphilosophy.net/threads/forgotten-sikh-tribes-and-sikh-religious-places.54071/"}],"images":[],"image_needed":true,"suggested_query_terms":["Gurdwara Manji Sahib Thimma Reddi Palle Wikimedia","Thimmareddipalle gurdwara photo"]}
-      ]
-    };
+function openDrawer(id){
+  const l=L.find(x=>x.id===id);if(!l) return;
+  document.getElementById('dImgWrap').innerHTML=l.img
+    ?`<img class="drawer-img" src="${l.img}" alt="${l.name}" onerror="this.parentElement.innerHTML='<div class=drawer-img-placeholder>${l.emoji}</div>'">`
+    :`<div class="drawer-img-placeholder">${l.emoji}</div>`;
+  document.getElementById('dCat').textContent=l.cat;
+  document.getElementById('dTitle').textContent=l.name;
+  document.getElementById('dTagline').textContent=l.tagline||'';
+  document.getElementById('dBg').textContent=l.bg||'';
+  document.getElementById('dVisit').innerHTML=(l.visit||[]).map(v=>`<li>${v}</li>`).join('');
+  document.getElementById('dPills').innerHTML=(l.hi||[]).map(h=>`<span class="pill">${h}</span>`).join('');
+  document.getElementById('dActions').innerHTML=`
+    <a class="btn-primary" href="${l.map}" target="_blank" rel="noopener noreferrer">📍 Open in Google Maps</a>
+    <button class="btn-outline" onclick="closeDrawer()">← Back to Gems</button>`;
+  drawer.classList.add('open');overlay.classList.add('open');
+  drawerOpen=true;document.body.style.overflow='hidden';
+  document.getElementById('drawerClose').focus();
+}
 
-    const photoLibrary = [
-      { placeId: 'pillalamarri-banyan', title: 'Pillalamarri Banyan Tree (photo reference)', url: 'https://www.trodly.com/activity-3259-koilkonda-fort-trek-from-hyderabad', source: 'Trodly' },
-      { placeId: 'mudmal-megaliths', title: 'Mudumal Menhirs – standing stones', url: 'https://indianexpress.com/article/cities/hyderabad/heritage-enthusiasts-telangana-seek-unesco-tag-for-menhirs-at-mudumal-7574869/', source: 'Indian Express' },
-      { placeId: 'manyam-konda', title: 'Uma Maheswaram / hill-temple landscape reference', url: 'https://holaciti.com/travel-stories/uma-maheswaram-temple-history-timings-location-festivals-travel-guide', source: 'Holaciti' },
-      { placeId: 'krishna-bhima-sangam', title: 'Nearby regional landscape reference', url: 'https://www.trawell.in/telangana/mahabubnagar/jurala-dam', source: 'Trawell' }
-    ];
+function closeDrawer(){
+  drawer.classList.remove('open');overlay.classList.remove('open');
+  drawerOpen=false;document.body.style.overflow='';
+}
 
-    const stories = {
-      'pillalamarri-banyan': 'Locals often call this a living elder of the town — a shade-giving landmark where generations share stories and family memories.',
-      'koilkonda-fort': 'Koilkonda whispers Deccan-era strategy and courage. People say every gateway is a chapter of stone, wind, and watchful history.',
-      'manyam-konda': 'A hill of devotion where quiet steps and cave prayer spaces create a deeply reflective pilgrimage mood for devotees and travelers alike.',
-      'mayuri-haritha-vanam': 'An urban-green chapter of modern Telangana: recreation, hillside breeze, and a people-first eco space for evening relaxation.',
-      'pedda-cheruvu': 'Pedda Cheruvu holds the rhythm of daily Mahabubnagar life — walkers, sunsets, and calm water that mirrors the town’s pace.',
-      'krishna-bhima-sangam': 'At the sangam, two rivers meet like two traditions. It is both sacred geography and heritage memory for nearby communities.',
-      'mudmal-megaliths': 'Mudmal’s stones stand like prehistoric signatures. Elders and heritage enthusiasts describe it as a rare open-air archive of deep time.',
-      'gurdwara-manji-sahib-thimmareddipalle': 'Shared through community memory, this site reflects plural spiritual routes in the region and invites respectful, verified exploration.'
-    };
+document.getElementById('drawerClose').addEventListener('click',closeDrawer);
+overlay.addEventListener('click',closeDrawer);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawerOpen) closeDrawer()});
 
-    function mapLink(place) {
-      const query = `${place.name}, ${place.admin_area?.mandal || ''}, Mahabubnagar, Telangana`;
-      return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
-    }
+document.getElementById('cardsGrid').addEventListener('click',e=>{const c=e.target.closest('.card');if(c) openDrawer(c.dataset.id)});
+document.getElementById('cardsGrid').addEventListener('keydown',e=>{
+  if(e.key==='Enter'||e.key===' '){const c=e.target.closest('.card');if(c){e.preventDefault();openDrawer(c.dataset.id)}}
+});
+document.getElementById('searchInput').addEventListener('input',e=>{query=e.target.value;render()});
+document.getElementById('chips').addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c) return;activeCat=c.dataset.cat;buildChips();render()});
 
-    function normalizeHttpUrl(value) {
-      if (typeof value !== 'string' || !value.trim()) return '';
-      try {
-        const normalized = value.startsWith('//') ? `https:${value}` : value;
-        const parsed = new URL(normalized);
-        if (!/^https?:$/.test(parsed.protocol)) return '';
-        return parsed.toString();
-      } catch {
-        return '';
-      }
-    }
-
-    function extractCommonsFileName(commonsPageUrl) {
-      const safeUrl = normalizeHttpUrl(commonsPageUrl);
-      if (!safeUrl) return '';
-      try {
-        const parsed = new URL(safeUrl);
-        const host = parsed.hostname.replace(/^www\./, '').toLowerCase();
-        if (host !== 'commons.wikimedia.org') return '';
-
-        let filename = '';
-        const pathMatch = parsed.pathname.match(/^\/wiki\/File:(.+)$/i);
-        if (pathMatch) filename = pathMatch[1];
-
-        if (!filename) {
-          const title = parsed.searchParams.get('title') || '';
-          const titleMatch = title.match(/^File:(.+)$/i);
-          if (titleMatch) filename = titleMatch[1];
-        }
-
-        if (!filename) {
-          const specialMatch = parsed.pathname.match(/^\/wiki\/Special:FilePath\/(.+)$/i);
-          if (specialMatch) filename = specialMatch[1];
-        }
-
-        if (!filename) return '';
-        const decoded = decodeURIComponent(filename).trim();
-        return decoded || '';
-      } catch {
-        return '';
-      }
-    }
-
-    function commonsPageToImage(commonsPageUrl) {
-      const filename = extractCommonsFileName(commonsPageUrl);
-      if (!filename) return '';
-      return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=1400`;
-    }
-
-    function toDirectImageUrl(value) {
-      const safe = normalizeHttpUrl(value);
-      if (!safe) return '';
-      return commonsPageToImage(safe) || safe;
-    }
-
-    function getImageUrl(place) {
-      if (!place || !Array.isArray(place.images)) return '';
-      for (const image of place.images) {
-        if (!image || typeof image !== 'object') continue;
-        const explicit = toDirectImageUrl(image.image_url) || toDirectImageUrl(image.url);
-        if (explicit) return explicit;
-        const commons = commonsPageToImage(image.commons_page);
-        if (commons) return commons;
-      }
-      return '';
-    }
-
-    function getPhotoReference(placeId) {
-      return photoLibrary.find(item => item.placeId === placeId) || null;
-    }
-
-    function buildNarrative(place) {
-      const localLine = stories[place.id] || 'A meaningful stop that blends Telangana hospitality, local memory, and regional pride.';
-      const typeLine = place.type?.length ? `Cultural lens: ${place.type.join(' • ')}.` : '';
-      return `${localLine} ${typeLine} Local saying vibe: “Mana ooru, mana samskruti.”`;
-    }
-
-    const cardsEl = document.getElementById('cards');
-    const chipsEl = document.getElementById('chips');
-    const searchInput = document.getElementById('searchInput');
-    const resultsNote = document.getElementById('resultsNote');
-    const modal = document.getElementById('placeModal');
-    const closeModalBtn = document.getElementById('closeModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalBadges = document.getElementById('modalBadges');
-    const modalBody = document.getElementById('modalBody');
-
-    const allTypes = [...new Set(data.places.flatMap(place => place.type || []))].sort();
-    let activeType = 'All';
-
-    function createChips() {
-      const types = ['All', ...allTypes];
-      chipsEl.innerHTML = types.map(type => `<button class="chip" data-type="${type}" aria-pressed="${type === 'All'}">${type}</button>`).join('');
-    }
-
-    function renderCards() {
-      const query = searchInput.value.trim().toLowerCase();
-      const filtered = data.places.filter(place => {
-        const haystack = [place.name, ...(place.type || []), ...(place.tags || [])].join(' ').toLowerCase();
-        const typeMatch = activeType === 'All' || (place.type || []).includes(activeType);
-        return typeMatch && (!query || haystack.includes(query));
-      });
-
-      resultsNote.textContent = `${filtered.length} place${filtered.length === 1 ? '' : 's'} found`;
-
-      cardsEl.innerHTML = filtered.length ? filtered.map(place => {
-        const imageUrl = getImageUrl(place);
-        const fallbackPhoto = getPhotoReference(place.id);
-        return `
-          <article class="card" tabindex="0" data-id="${place.id}" role="button" aria-label="Open details for ${place.name}">
-            ${imageUrl
-              ? `<img class="cover" src="${imageUrl}" alt="${place.name} photograph" loading="lazy" onerror="this.closest('article').querySelector('.placeholder').hidden=false; this.hidden=true;" /><div class="placeholder" hidden>Image preview unavailable</div>`
-              : `<div class="placeholder">${fallbackPhoto ? `Photo link available (${fallbackPhoto.source})` : 'Image needed for this place'}</div>`}
-            <div class="content">
-              <h2 class="title">${place.name}</h2>
-              <div class="badges">${(place.type || []).map(type => `<span class="badge">${type}</span>`).join('')}</div>
-              <div class="meta-badges">
-                ${place.image_needed ? '<span class="badge warn">Image needed</span>' : ''}
-                ${place.verification_status === 'community_reference_only' ? '<span class="badge verify">Verify details</span>' : ''}
-              </div>
-              <p class="summary">${place.summary || 'No summary yet.'}</p>
-            </div>
-          </article>
-        `;
-      }).join('') : '<p>No places match your filters. Try a broader search.</p>';
-    }
-
-    function renderModal(place) {
-      modalTitle.textContent = place.name;
-      modalBadges.innerHTML = [
-        ...(place.type || []).map(type => `<span class="badge">${type}</span>`),
-        place.image_needed ? '<span class="badge warn">Image needed</span>' : '',
-        place.verification_status === 'community_reference_only' ? '<span class="badge verify">Verify details</span>' : ''
-      ].join('');
-
-      const tips = place.visit_tips || {};
-      const tipsList = [
-        tips.best_time ? `<li><strong>Best time:</strong> ${tips.best_time}</li>` : '',
-        tips.duration ? `<li><strong>Suggested duration:</strong> ${tips.duration}</li>` : '',
-        ...(tips.notes || []).map(note => `<li>${note}</li>`)
-      ].join('');
-
-      const adminList = Object.entries(place.admin_area || {}).map(([k, v]) => `<li><strong>${k}:</strong> ${v}</li>`).join('');
-      const sourcesHtml = (place.sources || []).length
-        ? `<ul>${place.sources.map(src => `<li><a class="source-link" href="${src.url}" target="_blank" rel="noopener noreferrer">${src.label}</a></li>`).join('')}</ul>`
-        : '<p>No source links listed.</p>';
-
-      const galleryCards = (place.images || []).map(img => {
-        const link = toDirectImageUrl(img.image_url) || toDirectImageUrl(img.url) || commonsPageToImage(img.commons_page) || normalizeHttpUrl(img.commons_page);
-        if (!link) return '';
-        return `<a class="link-card" href="${link}" target="_blank" rel="noopener noreferrer">
-          <strong>${img.title || 'Photo'}</strong>
-          <span>${img.license || 'Image link'}</span>
-          <span>${img.attribution || ''}</span>
-        </a>`;
-      }).filter(Boolean).join('');
-
-      const fallbackPhoto = getPhotoReference(place.id);
-      const photoRefBlock = fallbackPhoto
-        ? `<a class="link-card" href="${fallbackPhoto.url}" target="_blank" rel="noopener noreferrer"><strong>${fallbackPhoto.title}</strong><span>Source: ${fallbackPhoto.source}</span><span>Open page for reference photo(s)</span></a>`
-        : '';
-
-      const maps = mapLink(place);
-      const narrative = buildNarrative(place);
-
-      modalBody.innerHTML = `
-        <section class="detail-group">
-          <h3>Cultural story & local saying</h3>
-          <p>${narrative}</p>
-        </section>
-
-        <section class="detail-group">
-          <h3>Why visit</h3>
-          ${(place.why_go || []).length ? `<ul>${place.why_go.map(item => `<li>${item}</li>`).join('')}</ul>` : '<p>Not specified.</p>'}
-        </section>
-
-        <section class="detail-group">
-          <h3>Visitor guidance</h3>
-          ${tipsList ? `<ul>${tipsList}</ul>` : '<p>Not specified.</p>'}
-        </section>
-
-        <section class="detail-group">
-          <h3>Administrative area</h3>
-          ${adminList ? `<ul>${adminList}</ul>` : '<p>Not specified.</p>'}
-          <a class="map-link" href="${maps}" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
-        </section>
-
-        <section class="detail-group">
-          <h3>Clear description</h3>
-          <p>${place.summary || 'No summary available.'}</p>
-        </section>
-
-        <section class="detail-group">
-          <h3>Photographs & references</h3>
-          ${(galleryCards || photoRefBlock) ? `<div class="links-grid">${galleryCards}${photoRefBlock}</div>` : '<p>No photos listed yet; verify and add trusted image sources.</p>'}
-        </section>
-
-        <section class="detail-group">
-          <h3>Sources</h3>
-          ${sourcesHtml}
-        </section>
-      `;
-
-      modal.showModal();
-      closeModalBtn.focus();
-    }
-
-    createChips();
-    renderCards();
-
-    chipsEl.addEventListener('click', (event) => {
-      const chip = event.target.closest('.chip');
-      if (!chip) return;
-      activeType = chip.dataset.type;
-      [...chipsEl.querySelectorAll('.chip')].forEach(el => el.setAttribute('aria-pressed', String(el === chip)));
-      renderCards();
-    });
-
-    searchInput.addEventListener('input', renderCards);
-
-    cardsEl.addEventListener('click', (event) => {
-      const card = event.target.closest('.card');
-      if (!card) return;
-      const place = data.places.find(p => p.id === card.dataset.id);
-      if (place) renderModal(place);
-    });
-
-    cardsEl.addEventListener('keydown', (event) => {
-      if (event.key !== 'Enter' && event.key !== ' ') return;
-      const card = event.target.closest('.card');
-      if (!card) return;
-      event.preventDefault();
-      const place = data.places.find(p => p.id === card.dataset.id);
-      if (place) renderModal(place);
-    });
-
-    closeModalBtn.addEventListener('click', () => modal.close());
-
-    modal.addEventListener('click', (event) => {
-      const rect = modal.getBoundingClientRect();
-      const inBounds = rect.top <= event.clientY && event.clientY <= rect.top + rect.height && rect.left <= event.clientX && event.clientX <= rect.left + rect.width;
-      if (!inBounds) modal.close();
-    });
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && modal.open) modal.close();
-    });
-  </script>
+buildChips();render();
+</script>
 </body>
 </html>
